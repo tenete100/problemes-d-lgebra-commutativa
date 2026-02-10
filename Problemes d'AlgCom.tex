@@ -1,0 +1,42 @@
+\documentclass[11pt, a4paper]{article}
+\input{Config.tex}
+\usepackage{hyperref}
+\renewcommand{\thesubsection}{}
+\renewcommand{\thesection}{}
+
+\title{Introducció a l'àlgebra commutativa}
+\author{Bernat Esteve Sagarra}
+
+\begin{document}
+\pagestyle{fancy}
+% 
+\lhead{Bernat Esteve}
+\rhead{Problemes d'Àlgebra commutativa}
+\begin{tcolorbox}[title=\section{Exercici 1}]
+    Sigui $A$ un anell, $I$ un ideal. Recordeu que es defineix el \textit{radical} de $I$, $\rad(I)=\eta(I)$, com el conjunt d'elements $x\in A$ tals que existeixen $n\in\NN$ tal que $x^n\in I$. Proveu que:
+    \begin{enumerate}
+        \item $\rad(I)$ és la intersecció de tots els ideals primers de $A$ que contenen $I$.
+        \item Si $I$ és un ideal primer, $\rad(I^n)=I$ per a tot $n>0$.
+        \item $\rad(I)$ és un ideal maximal si, i només si, $I$ està contingut en un únic ideal primer.
+    \end{enumerate}
+\end{tcolorbox}
+\subsection{Exercici 1.1}
+Per veure el primer apartat, notem que $\rad(I)$ és un ideal. Per veure-ho notem que $\rad(I)/I$ són els elements nilpotents de $A/I$; i per tant és un ideal (per la bijecció entre un conjunt i l'altre).\par
+\textbf{Primera inclusió:}\\
+Per fer la primera inclusió, hem de veure que $\rad$ és un ideal primer. Sigui $ab\in\rad(I)$, aleshores sabem que $(ab)^n\in I$ per alguna $n$. Per tant, si fem quocient per $I$, tenim que $ab$ és nilpotent, i per tant, ha de ser al $\rad(I)$.\par
+\textbf{Segona inclusió:}\\
+Sigui $J$ un ideal primer que conté $I$, aleshores tenim $x^n\in I \implies x\in I$; és a dir que el $\rad\subseteq J$, que és el que volíem veure.
+\subsection{Exercici 1.2}
+Notem que $I^2\subseteq I$, per tant, $\rad(I^2)\subseteq\rad(I)$, per tant, en tenim prou en veure-ho per $\rad(I)$. Però sabem que $A/I$ on $I$ és un ideal primer és un domini d'integritat, i per tant, no hi ha elements nilpotents, i per tant el radical és $I$, que és el que volíem veure.
+\subsection{Exercici 1.3}
+\textbf{Primera implicació:}\\
+Per veure la primera implicació, notem que si $I$ només està contingut en un ideal primer $J$, aquest ha de ser maximal. I com que el radical ha de ser un ideal primer que contingui $I$, aquest haurà de ser $J$.\par
+\textbf{Segona implicació:}\\
+Per veure la segona implicació 
+
+\end{document}
+% ---
+% \newpage
+% \begin{tcolorbox}[title=\section{Exercici XXX}]
+% \end{tcolorbox}
+% \subsection{Exercici XXX}
