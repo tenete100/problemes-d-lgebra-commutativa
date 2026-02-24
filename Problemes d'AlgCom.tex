@@ -23,16 +23,225 @@
 \subsection{Exercici 1.1}
 Per veure el primer apartat, notem que $\rad(I)$ és un ideal. Per veure-ho notem que $\rad(I)/I$ són els elements nilpotents de $A/I$; i per tant és un ideal (per la bijecció entre un conjunt i l'altre).\par
 \textbf{Primera inclusió:}\\
-Per fer la primera inclusió, hem de veure que $\rad$ és un ideal primer. Sigui $ab\in\rad(I)$, aleshores sabem que $(ab)^n\in I$ per alguna $n$. Per tant, si fem quocient per $I$, tenim que $ab$ és nilpotent, i per tant, ha de ser al $\rad(I)$.\par
+Per fer la primera inclusió, recordem que $\eta(A/I)=\bigcap_{\mfrk{p}\in\spec(A/I)}\mfrk p$; i com que hi ha una bijecció entre els ideals primers que contenen $I$ i els de $A/I$; que ens dona el que volíem.\par
 \textbf{Segona inclusió:}\\
-Sigui $J$ un ideal primer que conté $I$, aleshores tenim $x^n\in I \implies x\in I$; és a dir que el $\rad\subseteq J$, que és el que volíem veure.
+Sigui $J$ un ideal primer que conté $I$, aleshores tenim $x^n\in J \implies x\in J$; és a dir que el $\rad\subseteq J$, que és el que volíem veure.
 \subsection{Exercici 1.2}
-Notem que $I^2\subseteq I$, per tant, $\rad(I^2)\subseteq\rad(I)$, per tant, en tenim prou en veure-ho per $\rad(I)$. Però sabem que $A/I$ on $I$ és un ideal primer és un domini d'integritat, i per tant, no hi ha elements nilpotents, i per tant el radical és $I$, que és el que volíem veure.
+Considerem $x\in\rad(I^k)$, això ens diu que existeix algun $n\in\NN$ tal que $x^n\in I^k\subseteq I$ i com que $I$ és primer, tenim que $\rad(I^k)\subseteq I$.\par
+Per veure per l'altra implicació, notem que $\rad(I^n)$ conté $I$.
+
 \subsection{Exercici 1.3}
 \textbf{Primera implicació:}\\
-Per veure la primera implicació, notem que si $I$ només està contingut en un ideal primer $J$, aquest ha de ser maximal. I com que el radical ha de ser un ideal primer que contingui $I$, aquest haurà de ser $J$.\par
+Per veure la primera implicació, notem que si $I$ només està contingut en un ideal primer $J$, aquest ha de ser maximal. I com que el radical és la intersecció de tots els ideals primers que contenen $I$, ens queda que $J=\rad(I)$.\par
 \textbf{Segona implicació:}\\
 Per veure la segona implicació, notem que si l'ideal $\rad$ és maximal, aleshores també és primer; i com que $\rad$ ha de viure dins de tots els ideals primers que contenen $I$, aquest ha de ser únic.
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 2}]
+    Sigui $A[[X]]$ l'anell de sèries de potències amb coeficients en $A$, $f=\sum_{n\geq0}a_nX^n\in A[[X]]$.\\
+    Demostreu:
+    \begin{enumerate}
+        \item $f$ és una unitat en $A[[X]]$ si i només si $a_0$ és una unitat de $A$.
+        \item Si $f$ és nilpotent aleshores $a_n$ és nilpotent per tot $n\in\NN$.
+        \item Sigui $k$ un cos. Proveu que els ideals no nuls de $k[[X]]$ són de la forma $(X^i)$.
+    \end{enumerate}
+\end{tcolorbox}
+\subsection{Exercici 2.1}
+Notem que el producte de polinomis $f=(a_0, a_1, \dots)$, $g=(b_0, b_1, \dots)$ és $f\cdot g=(a_0b_0, a_0b_1+a_1b_0,\dots)$. Aleshores, si $f\cdot g=1$, surt immediat que $a_0$ ha de ser invertible. En canvi, si $a_0$ és invertible, aleshores hem de resoldre el sistema lineal:
+\[
+    \begin{cases}
+        a_0b_0=1&\text{si } n=0\\
+        a_0b_n+a_1b_{n-1}+\dots+a_n b_0=0 &\text{si }n>0
+    \end{cases}
+\]
+I ens queda que l'únic element que hem d'invertir és $a_0$ (ens queda que hem d'invertir una matriu infinita triangular superior amb $a_0$ a la diagonal), que és justament el que havíem de veure.
+\subsection{Exercici 2.2}
+Suposem que $f$ té algun $a_n$ que no és nilpotent. Sigui $a_n$ el de menor grau. Considerem $f^k$ amb $k$ prou gran com per que $a_i^k=0$ per $i<n$. Aleshores $f(X)^k=a^{k}_nX^{nk}+\dots=X^{nk}\underbrace{(a_n^k+\dots)}_{g(X)}$, però $f(X)^{kl}=X^{nkl}g(X)^l$ amb $b_0$ un element que no és nilpotent; i això és una contradicció, ja que tindrem un element que mai valdrà 0.
+\subsection{Exercici 2.3}
+Sigui $I$ un ideal, i sigui $n=\min_{p\in I}\{\text{ordre de }p\}$, i $f$ un polinomi d'ordre $n$. Com que $k$ és un cos, aleshores podem trencar $f(X)=g(X)X^n$ amb $g$ invertible (pel primer apartat). Per tant, existeig $g^{-1}(X)g(X)=1$, és a dir: $f(X)g^{-1}(X)=X^n$, i d'aquí $(X^n)\subseteq I$; i l'altra implicació és evident.
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 3}]
+    Sigui $A$ un anell. Donat un polinomi $h=h_0+\dots +h_nX^n$ de $A[X]$, definim el contingut $c(h)$ de $h$ com l'ideal d'$A$ generat pels seus coeficients.
+    \[
+        c(h)=(h_0,\dots,h_n)\subseteq A.
+    \]
+    \begin{enumerate}
+        \item Proveu que donats polinomis $f,g\in A[X]$ es verifica $c(f)c(g)\subseteq\eta(c(fg))$, on $\eta(I)$ és el radical de $I$.
+        \item Proveu que si $f=a_0+\dots+a_rX^r$, $g=b_0+\dots+b_sX^s$ són polinomis de $A[X]$, tals que $(a_0,\dots,a_r)=A$ i $(b_0,\dots,b_s)=A$, aleshores l'ideal generat pels coeficients de $fg$ és $A$.
+        \item Dona un exemple on la contenció de l'apartat (i) sigui estricta.
+    \end{enumerate}
+\end{tcolorbox}
+\subsection{Exercici 3.1}
+Abans de començar, observem que $c(fg)\subseteq c(f)c(g)=\{\alpha_0\beta_0+\dots+\alpha_m\beta_m\,|\,\alpha_i\in c(f), \beta_n\in c(g)\}$.\\
+Notem que si veiem que $c(h)c(g)\subseteq \mfrk p$ per qualsevol $\mfrk p$ que contingui $c(fg)$ [ACABAR]
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 5}]
+    Sigui $A$ un anell. Recordeu que un element $e \in A$ és idempotent si $e^2 = e$, $e \neq 0$ i que si $e \neq 1$ aleshores $e$ no pot ser un unitat.
+    \begin{enumerate}
+        \item Sigui $e$ un idempotent. Prova que $Ae \subseteq A$ és un anell (però no un subanell de $A$ excepte si e = 1).
+        \item Prova que si $e \neq 1$ és un idempotent, aleshores $1 - e$ és un idempotent i que $e(1 - e) = 0$.
+        \item Prova que existeixen anells no trivials $A_1, A_2$ tals que $A \simeq A1 \times A2$ si, i només si, existeix un idempotent $e \in A$, $e \neq 1$.
+        \item Més en general: prova que existeixen anells no trivials $A_1, \dots , A_n$ tals que $A \simeq A_1 \times \dots \times A_n$ si, i només si, existeix una familia de elements idempotents $e_1, \dots , e_n$, $e_i \neq 1$ per a tot $i$, tal que $e_ie_j = 0$ per a tot $i \neq j$ i $1 = e_1 + \dots + e_n$.
+    \end{enumerate}
+\end{tcolorbox}
+\subsection{Exercici 5.1}
+Hem de veure que $Ae$ està tancat amb la suma (i que és abeliana, però es deriva de que $A$ és anell), el producte (i que és abelià, que s'obté de que $A$ és anell); que existeixen els elements neutres; i la propietat distributiva (que es deriva immediatament de que $A$ és un anell).
+\textbf{Suma:}\\
+Sigui $ae$, $be\in Ae$, aleshores hem de veure que $ae+be\in Ae$; però $ae+be=(a+b)e\in Ae$.\par
+\textbf{Producte:}\\
+Sigui $ae$, $be\in Ae$, aleshores hem de veure que $(ae)(be)\in Ae$; però $(ae)(be)=(ab)e^2=abe\in Ae$.\par
+\textbf{Neutre:}\\
+Notem que $e$ és l'element neutre, ja que si $ae\in Ae$, aleshores $(ae)e=ae^2=ae$.
+\subsection{Exercici 5.2}
+Notem que
+\[
+    (1-e)^2=1-2e+e^2=1-e
+\]
+Per tant, $1-e$ és un element idempotent. I com que si $1-e$ és idempotent, aleshores $1-(1-e)=e$ és idempotent, ja estem.\\
+Notem, finalment, que $e(1-e)=e-e=0$.
+\subsection{Exercici 5.3}
+Per veure la primera implicació: Sigui $A_1=e A$ i $A_2=(1-e)A$ amb $\pi_1:A\to A_1$ és $\pi_1(a)=ea$ i $\pi_2:A\to A_2$ és $\pi_2(a)=(1-e)a$. No és difícil de veure que $\pi_1(1)=1$ i $\pi_2(1)=1$ (per com es defineix la unitat en $A_1$ i $A_2$). Per tant, hem de veure que $a\to (ea,(1-e)a)$ és un isomorfisme.\\
+\textbf{Injectivitat:}\\
+Sigui $a$ tal que $(ea,(1-e)a)=(0,0)$, per tant, $ea=0$ i $(1-e)a=0$. Però notem que $0=ea+(1-e)a=a$. Per tant té nucli 0.\\
+\textbf{Exhaustivitat:}\\
+Hem de veure que per tot $(ae,b(1-e))$ existeix un $c$ tal que $c\mapsto (ae,b(1-e))$, però considerem $c=ae+b(1-e)$. Com que $e(1-e)=0$, les coses funcionen.\par
+Per veure l'altra implicació, notem que $(1,0)$ és un element idempotent, i $(1,0)\neq (1,1)$.
+\subsection{Exercici 5.4}
+Fem el mateix que abans: considerem $A_i=e_iA$, amb les mateixes projeccions que abans (notem que la unitat, al ser la suma de tot, funciona bé). Per veure la injectivitat es fa el mateix: com que $ae_i=0$ per tot $i$, aleshores si ho sumem tot, obtenim $0=\sum e_ia=a$. I per veure la exhaustivitat, com que els elements idempotents són ortogonals, funciona el mateix raonament d'abans.\par
+Per veure el recíproc, no té massa misteri, ja que els element idempotents són $(1,0,\dots,0)+\dots+(0,\dots,0,1)=1_A$ que és el que volíem veure. (pel que fa amb els productes, és encara més immediat).
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 6}]
+    Sigui $A$ un anell i $I_1$, $\dots$, $I_n$ una família d'ideals comaximals dos a dos. Proveu que
+    \[
+        \prod_{i=1}^nI_i=\bigcap_{i=1}^nI_i.
+    \]
+\end{tcolorbox}
+\subsection{Exercici 6}
+Recordem que $I$ i $J$ són comaximals si $I+J=A$.\par
+Primer veurem la primera inclusió $\subseteq$:\\
+Notem que $\prod I_i\subseteq I_i$ per tot $i$, per tant, està a la intersecció.\par
+Per veure la segona inclusió $\supseteq$:\\
+Procedirem per inducció:\\
+Si només tenim 2 ideals, sigui $a\in I_1\cap I_2$ tal que $a\notin I_1 I_2$. Notem que si tenim $x_1+x_2=1$, aleshores $ax_1+ax_2=a$; que contradiu que no estigui a $I_1I_2$.\\
+Ara pel pas inductiu: suposem-ho cert per $n-1$ ideals. Si veiem que la intersecció és comaximal ja estarem.\\
+Considerem $u_i\in I_i$ i $v_i\in I_n$ tal que $u_i+v_i=1$
+\[
+\prod (u_i+v_i)=1=U+V
+\]
+On $U=\prod u_i$ i $V$ és la resta. Notem que $U\in\bigcap^{n-1} I_i$, i com que $V$ és suma de coses, que cadascuna està multiplicada per algun element de $I_n$, $V\in I_n$; i per tant, són anells comaximals.
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 7}]
+Sigui $A$ un anell i $\eta(A)$ el seu nilradical. Prova que són equivalents:
+\begin{enumerate}
+    \item $A$ té exactament un ideal primer.
+    \item Tot element de $A$ és nilpotent o unitat.
+    \item $A/\eta(A)$ és un cos.
+\end{enumerate}
+\end{tcolorbox}
+\subsection{Exercici 7}
+
+
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 8}]
+Sigui $A$ un anell. Es deﬁneix el radical de Jacobson de $A$ com l'ideal $J(A)$ intersecció de tots els ideals maximals de $A$.
+\begin{enumerate}
+    \item Proveu que: $x \in J(A) \iff \forall y \in A, 1 - xy$ és invertible en $A$.
+    \item Proveu que la suma d'un element del radical de Jacobson i una unitat és una unitat.
+\end{enumerate}
+\end{tcolorbox}
+\subsection{Exercici 8}
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 9}]
+Sigui $A$ un anell commutatiu tal que $a^2=a$ per a tot $a\in A$ (un tal $A$ es diu que és un anell de Boole), i sigui $\mathrm{Max}\; A$ el conjunt d'ideals maximals. Demostreu:
+\begin{enumerate}
+    \item Tot ideal primer $\mfrk p$ de $A$ és maximal i $A/\mfrk p\cong \FF_2$.
+    \item $\bigcap_{\mfrk m\in\mathrm{Max}\;A}\mfrk m=0$.
+    \item Per cada $\mfrk m \in \mathrm{Max}\;A$, sigui $\phi_\mfrk {m} : A \to A/\mfrk m$ el morﬁsme de pas al quocient. Proveu que
+\[
+\begin{array}{rrl}
+    A&\xrightarrow{\Phi} &\prod _{\mfrk m\in \mathrm{ Max}\; A}A/\mfrk m\\
+    a&\mapsto &(\phi_m(a))
+\end{array}
+\]
+és un morﬁsme injectiu d'anells, i que si $\mathrm {Max}\;A$ és ﬁnit llavors $\Phi$ és un isomorﬁsme.
+Deduïu que $A$ és ﬁnit si i només si $\mathrm{Max}\;A$ és ﬁnit.
+\item  $2a = 0$ per tot $a \in A$, i que tot ideal ﬁnitament generat de $A$ és principal.\\
+(Indicació: $(a, b) = (a + b + ab)$.)
+\end{enumerate}
+\end{tcolorbox}
+\subsection{Exercici 9.1}
+Notem que $A\cong A_1\times A_2$, ja que té almenys un element idempotent diferent de la identitat (sinó l'anell és només $\{0,1\}\cong \FF_2$).\\
+Sigui $\mfrk p$ un ideal primer, aleshores considerem $A/\mfrk p$, que sabem que és un domini d'integritat.\\
+Sigui $x\in A/\mfrk p$, aleshores $x^2=x$ (aquesta relació ve de que estem a $A$); i per l'exercici 5 $(1-x)x=0$: és a dir que $1-x=0$ o $x=0$. Suposem ara que $x$, $y\neq 0$, que ens diu que $xy\neq 0$, i pel que hem acabat de veure $1=xy$. I com que l'únic element idempotent invertible és al unitat, obtenim que $x=y=1$.\\
+Per tant, $A/\mfrk p\cong \FF_2$. I com que $A/\mfrk p$ és un cos, en deduïm que $\mfrk p$ ha de ser maximal.
+\subsection{Exercici 9.2}
+Com que els ideals maximals són els ideals primers
+\[
+    J(A)=\eta(A)=0
+\]
+\subsection{Exercici 9.3}
+Sigui $a\in\ker(\Phi)$; alehores
+\[
+    \Phi(a)=(0,0,0,\dots)\iff a\in\bigcap _{\mfrk m\in\mathrm {Max}\;A}\mfrk m=0
+\]
+Per tant, el morfisme és injectiu.\par
+Per estudiar la exhaustivitat, volem veure que 
+\[\Ima \Phi\cong \bigoplus_{\mfrk m\in\Max A}A/\mfrk m\]
+Però com que tenim que això ve donat per les injeccions canòniques, que en els casos en que el conjunt dels índexs sigui finit, és igual al producte; i per tant, es tracta d'un isomorfisme.\par
+Notem que en el cas de que es tracti d'un isomorfisme, tenim que $A$ és isomorf a una quantitat finita de còpies de $\FF_2$: que és finit.\\
+I si $A$ és finit, aleshores té un nombre finit d'ideals, i en particular, d'ideals maximals.
+\subsection{Exercici 9.4}
+Sigui $x\in A$:
+\[
+    2x=(x+x)^2=x^2+2x^2+x^2=4x
+\]
+I per tant, si restem $2x$ als dos costats, obtenim que $2x=0$.\par
+Per veure que qualsevol ideal finitament generat és principal, sigui $I=(e_1,e_2,\dots,e_n)$. Aleshores si considerem $E=\sum_{i} e_i+\sum_{i\neq j} e_ie_j+\dots+e_1\dots e_n=(1+e_1)\dots(1+e_n)-1\in I$, però com que $-e_i=e_i$ aleshores: $E=(1-e_1)\dots(1-e_n)-1$, i per tant
+\[
+    E e_i = (1-e_1)\dots \underbrace{(1-e_i)e_i}_{=0}\dots e_n-e_i=-e_i = e_i
+\]
+És a dir, que $E\in I$ genera $(e_1,\dots, e_n)$; i per tant, és un ideal principal.
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 10}]
+    Sigui $A$ un domini d'ideals principals.
+    \begin{enumerate}
+        \item Demostra que $J(A)=0$ si i només si $A$ és un cos, o té infinits ideals maximals.
+        \item Demostra que si $a\in A$ és diferent de zero i unitari llavors:\\
+        $J(A/(a))=0$ si i només si la descomposició de $a$ en producte d'elements primers no conté quadrats.
+    \end{enumerate}
+\end{tcolorbox}
+\newpage
+\subsection{Exercici 12.1}
+Recordem la definició del transportador d'un ideal:
+\[
+    (I:J)=\{a\in A\mid aJ\subset I\}
+\]
+Per tant, com que $\forall i\in I$ $ai\in I$, tenim que $I\subseteq (I:J)$.\par
+Per veure que la inclusió, en general, és estricta, considerem $J\subsetneq I$, aleshores $(I:J)=A$.
+\subsection{Exercici 12.2}
+Sigui $x\in (I:J)$, aleshores $xJ\in I$; i per tant, $I$ és un ideal que conté tots els productes de la forma $x j$ amb $x\in (I:J)$ i $j\in J$; i per tant, $I$ en conté totes les combinacions lineals.\par
+Per veure que la inclusió en general és estricta, considerem $J\subsetneq I$; aleshores $(I:J)J\subseteq J\neq I$.
+\subsection{Exercici 12.3}
+Notem que només hem de provar la primera igualtat, ja que la segona ve de que $A$ és commutatiu (i per tant, $JK=KJ$).\par
+
+% Per veure això, considerem:
+% \begin{align*}
+%     ((I:J):K)=\{a\in A\mid a K\subseteq (I:J)\}=
+%     ((I:J):K)=\{a\in A\mid \forall k \in K: (ak)J\subseteq I\}
+% \end{align*}
+% Però notem que 
+
+\textbf{Primera inclusió:}\\
+Sigui $x\in ((I:J):K)$, aleshores $xK\subseteq (I:J)$, i per tant, per qualsevol $k\in K$, $xkJ\subseteq I$, és a dir: per tot $x\in ((I:J):K)$,$k\in K$,$j\in J$ tenim que $\exists i\in I$ tal que $xkj = i$, per tant, $x\in (I:KJ)$.\par
+\textbf{Segona inclusió:}\\
+Sigui $x\in (I:KJ)$, aleshores per qualsevol $k\in K$ i $j\in J$ tenim
+\[
+    x kj\in I
+\]
+Per tant, si ens ho mirem pas a pas, tenim que $x\in ((I:J):K)$ que és el que volíem veure.
+\subsection{Exercici 12.4}
+Notem que $\left(\cap_i I_i:J\right)$ són els elements $a$ que $aJ\in I_i$ per to $i$; és a dir que està a tots els $(I_i:J)$.
+\subsection{Exercici 12.5}
+Notem que $a\in (I:\sum J_i)$, aleshores $a\sum J_i\subseteq I$, és a dir, com que $J_i\subseteq \sum J_i$, tenim en particular que $aJ_i\subseteq I$ per tot $i$. La inclusió contrària, notem que si $aJ_i\subseteq I$ per tot $i$, també ho serà per qualsevol combinació lineal.
 
 \end{document}
 % ---
