@@ -264,10 +264,18 @@ Notem que el polinomi característic de $\phi$ divideix el polinomi mínim de $\
     Sigui $A$ un domini d'integritat i $M$ un $A$-mòdul finit generat. Prova que $M$ és fidel, si i només si, $A\subseteq M$. Dona un exemple $\ZZ$-mòdul no finit generat que sigui fidel però que no contingui cap submòdul isomorf a $\ZZ$.
 \end{tcolorbox}
 \subsection{Exercici 23}
-pel que fa a l'exemple, prenem $M=\prod_{i \in \ZZ} \ZZ/(i)$. Notem que tots els elements tenen ordre finit, per tant, $\ZZ\not\hookrightarrow M$.\\
+pel que fa a l'exemple, prenem $M=\coprod_{i \in \ZZ} \ZZ/(i)$. Notem que tots els elements tenen ordre finit, per tant, $\ZZ\not\hookrightarrow M$.\\
 Ara, si $M$ està finitament generat per $e_1$, $\dots$, $e_n$, aleshores hem de veure les 2 implicacions:\par
-\textbf{Cas 1:}
-
+\textbf{Cas 1:}\\
+Suposem que $A\subseteq M$, aleshores $x\in\Ann(M)\implies xA=0\implies x\cdot 1=0$ i per tant, $\Ann(M)=0$.\par
+\textbf{Cas 2:}\\
+Suposem que $M$ és fidel, aleshores sigui $e$ tal que $e$ no s'anul·la per cap element de l'anell. Si veiem que tal element existeix, aleshores la inclusió $\iota:A\hookrightarrow M$ que envia $a\mapsto \iota (a)=ae$, i degut a la propietat de $e$, aquest morfisme és injectiu.\\
+Ara veurem que tal element existeix. Per fer-ho procedirem per contrarecíproc, suposem que tot element $m$, té un $x_m\neq0$ tal que $x_mm=0$. Considerem $n=x_{e_1}x_{e_2}\dots x_{e_n}$, aleshores $ne=n(a_1 e_1+\dots +a_ne_n)=0$, per tant, $n\in \Ann(M)$, que és una contradicció (ja que estem en un DIP).
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 24}]
+    Sigui $A$ un anell i $M$ un $M$-mòdul. En diem que $M$ és cíclic si existeix $m\in M$ tal que $M=Am$. Prova que tot mòdul cíclic és isomorf a $A/\Ann(M)$.
+\end{tcolorbox}
+\subsection{Exercici 24}
 \end{document}
 % ---
 % \newpage
