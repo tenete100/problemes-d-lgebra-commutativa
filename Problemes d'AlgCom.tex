@@ -281,6 +281,59 @@ Notem que el morfisme $\phi\colon A\to M$ que envia $a\mapsto am$. Aleshores aqu
     x\in\Ann(M)\iff xM=0\iff x(Am)=0\iff(x) m=0\iff xm=0 \iff x\in \ker \phi
 \]
 Per tant, el nucli d'aquest morfisme és $\Ann(M)$, i pel teorema d'isomorfia, ja estem.
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 27}]
+    Sigui $A$ un domini d'integritat, $M$ un $A$-mòdul. Es diu que $x\in M$ és un element de torsió si existeix $a \in A \setminus {0}$ tal que $ax = 0$. Sigui $T (M )$ el conjunt d'elements de torsió de $M$ . Aleshores, $M$ és diu de torsió si $M = T (M)$. Si $T (M ) = 0$ és diu que $M$ és lliure de torsió. Proveu:
+    \begin{enumerate}
+        \item $T (M) $ és un submòdul de torsió de $M$.
+        \item $M/T(M)$ és lliure de torsió.
+        \item Si $f : M \to N$ és $A$-lineal, llavors $f (T (M )) \subseteq T (N )$.
+        \item Si $M$ és de torsió i $N$ lliure de torsió, llavors $Hom_A(M, N ) = 0$.
+        \item Si $M$ és lliure, $M$ és lliure de torsió.
+        \item Si $M$ és cíclic i lliure de torsió, llavors $M \simeq A$.
+        \item Cóm són els $\ZZ$-mòduls ﬁnit generats lliures de torsió?
+    \end{enumerate}
+\end{tcolorbox}
+\subsection{Exercici 27.1}
+Hem de veure que $T(M)$ és un submòdul. Sigui $m,n\in T(M)$ aleshores existeix $a_m$ i $a_n$ tals que $a_mm=a_nn=0$. Per tant, $(a_ma_n)(m+n)=0$ i $\lambda a_m m=0$.
+\subsection{Exercici 27.2}
+Sigui $\ol m\in M/T(M)$ tal que $a\ol m=0$. Aleshores $am\in T(M)$ i per tant existeix $a'$ tal que $a'am=0$, és a dir $\ol m=0$, que ens diu que és lliure de torsió.
+\subsection{Exercici 27.3}
+sigui $m\in T(M)$ i $a_m\neq 0$, aleshores $f(a_mm)=a_mf(m)=0$, per tant, envia un element de torsió, a un altre element de torsió. 
+\subsection{Exercici 27.4}
+Notem que com que $M$ és de torsió, aleshores $f(M)=f(T(M))=0=T(N)$, per tant, l'únic morfisme és el 0.
+\subsection{Exercici 27.5}
+Sigui $m$ un element amb torsió del mòdul lliure. Aleshores $m=a_1e_1+\dots+a_ne_n$, aleshores $a_m m=a_1'e_1+\dots+a_n'e_n=0$ i sabem que això equival a que $a_i'=0$ per tot $i$, i d'aquí en traiem que $a_i a_m=0$: és a dir que $a_i=0$ o $a_m=0$.
+\subsection{Exercici 27.6}
+Notem que si $M$ és cíclic, aleshores $M\simeq A/\Ann(M)$, per tant, si a més és lliure de torsió, tenim que $\Ann(M)=0$, i per tant, $M\simeq A$.
+\subsection{Exercici 27.7}
+Notem que el $\ZZ$-mòduls són els grups abelians, i els que tenen torsió 0, són els que es poden posar com a suma directa de $\ZZ$ (pel teorema d'estructura de grups abelians finitament generats).
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 28}]
+    Sigui $A$ un anell i $M$ un $A$-mòdul. Direm que $M$ és simple si no conté cap submòdul no trivial (i.e., si $N$ és un submòdul de $M$, aleshores $N = 0$ o $N = M$). Demostreu:
+    \begin{enumerate}
+        \item Tot mòdul simple és cíclic.
+        \item Dona un exemple de mòdul cíclic no simple i un exemple de mòdul cíclic simple.
+        \item Donat un anell $A$, descriu tots els seus $A$-mòduls simples.
+        \item Si $M$ i $N$ són $A$-mòduls simples i $f : M \to N$ és un morﬁsme, aleshores $f = 0$ o bé $f$ és un isomorﬁsme.
+    \end{enumerate}
+\end{tcolorbox}
+\subsection{Exercici 28.1}
+Notem que $Am\subseteq M$ per tot $m$, però com que ha de ser un submòdul de $M$, ha de ser $0$ o $M$; però $m\in Am$, per tant, si $m\neq0$ tenim $Am=M$.
+\subsection{Exercici 28.2}
+Un exemple d'un $\ZZ$-mòdul cíclic no simple és $\FF_4$, que té un submòdul no trivial: $\{0,2\}$.
+Un exemple d'un mòdul cíclic simple és $\FF_2$.
+\subsection{Exercici 28.3}
+Notem que els mòduls simples són quocients de $A$, per tant, ha de ser de la forma $A/I$. I com que hi ha una bijecció entre els ideals de $A$ que contenen $I$, i els de $A/I$, per tant, per evitar tenir submòduls, $I$ ha de ser un ideal maximal.
+\subsection{Exercici 28.4}
+Notem que $\Ima(f)$ és un submòdul de $N$, i per tant, o $f\equiv 0$, o és exhaustiva. En el cas de que sigui exhaustiva, considerem el submòdul de $M$: $\ker (f)$. Aleshores, si $\ker(f)=M$, tenim que $f\equiv 0$; i en el cas contrari, és un isomorfisme (donat que també ha de ser exhaustiva).
+
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 29}]
+\end{tcolorbox}
+\subsection{Exercici 29}
+
+
 \end{document}
 % ---
 % \newpage
