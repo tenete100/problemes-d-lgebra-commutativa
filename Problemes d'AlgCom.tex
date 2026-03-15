@@ -536,12 +536,20 @@ Considerem el següent diagrama:
         \draw[color=red, dashed, ->] (d)--(bb) node[pos = 0.55, above] {$\delta$};
     \end{tikzpicture}
 \end{center}
-On $\ol f$ és la restricció de $f$ a $\ker(\alpha')$, i el mateix amb les altres $\ol*$. Quan sigui evident de què estic parlant, la barra poder desapareix.\par
+On $\ol f$ és la restricció (o la classe) de $f$ a $\ker(\alpha')$, i el mateix amb les altres $\ol*$. Quan sigui evident de què estic parlant, la barra poder desapareix.\par
 \textbf{Pas 1: $\Ima(\ol{f})=\ker(\ol{g})$}\\
 Sigui $x\in \ker(\ol{g})$, aleshores $x\in \ker(g)$, i per tant, existeix $y\in M'$ tal que $x = f(y)$. Notem que $f'(\alpha'(y))=\alpha(f(y))=\alpha(x)=0$, però com que $f'$ és injectiva $\alpha'(y)=0$, i per tant $y\in \ker(\alpha')$, amb $\ol f(y)=x$. Que ens diu que $\ker(\ol{g})\subseteq \Ima(\ol f)$.\\
 Però l'altra inclusió és immediata, ja que $g\circ f=0$.\\[5mm]
 \textbf{Pas 2: $\Ima(\ol{f'})=\ker(\ol{g'})$}\\
-
+Sigui $\ol x\in \ker(\ol{g'})$, aleshores $g'(x)=0$, i per tant, existeix $y$ tal que $f'(y)=x$. I com que el diagrama commuta, tenim la inclusió $\supseteq$; i l'altra és immediata ja que $g'\circ f'=0$.\\[5mm]
+\textbf{Definició de $\delta$:}\\
+Sigui $x\in \ker(\alpha'')$, aleshores com que $g$ és exhaustiva, podem prendre un $y\in M$ tal que $g(y)=x$. Considerem ara $\alpha(y)$; com que tots els quadrats commuten, tenim que $g'(\alpha(y))=\alpha''(g(y))=0$. Per tant, com que $f'$ és injectiva, i a més, $y\in \ker(g')=\Ima(f')$, existeix un únic $z\in N'$ tal que $f'(z)=y$. Aleshores, definim $\delta'(x)=\pi_{M'}(z)$.\\[3mm]
+\textbf{Té sentit:}\\
+Notem que en aquesta definició, tot era únic, excepte el pas de la tria de la $y$, ja que sabem que $g$ és exhaustiva, però no que sigui injectiva.\\
+Sigui $y_1$ i $y_2$ dues tries de $y$, tals que $g(y_1)=g(y_2)=x$. Aleshores considerem $g(\underbrace{y_1-y_2}_{Y})=0$, aleshores, existeix algun $t\in M'$ tal que $f(t)=Y$, aleshores, $\pi_{M'}\circ\alpha'(t)=0$, per tant, si agafes $\delta(x)$ no depèn de la tria de $y$.\\
+Veure que $\delta$ és $A$-lineal, es pot deduïr de que totes les aplicacions són $A$-lineals, i que tots els quadrats commuten.\\[5mm]
+\textbf{Pas 3: $\Ima (\ol g)=\ker(\delta)$}\\
+Sigui $x \in \ker \delta$, aleshores tenim que $\ol z=0$, i per tant, $z\in \Ima(\alpha')$, que ens diu que existeix un $t\in M'$ tal que $\alpha'(z)=t$. Aleshores com que el diagrama commuta, tenim que $y=f(t)$, i per tant, 
 \end{document}
 % ---
 % \newpage
