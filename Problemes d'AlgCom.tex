@@ -330,9 +330,217 @@ Notem que $\Ima(f)$ és un submòdul de $N$, i per tant, o $f\equiv 0$, o és ex
 
 \newpage
 \begin{tcolorbox}[title=\section{Exercici 29}]
+    Fent servir les propietats universals del producte directe i de la suma directa, prova el següent:
+    \begin{enumerate}
+        \item $\Hom_A\left(M, \prod_{i\in I} N_i\right)\simeq \prod_{i\in I}\Hom_A (M,N_i)$. Descriu explícitament l'isomorﬁsme.
+        \item $\Hom_A\left(\bigoplus_{i\in I} M_i, N\right) \simeq \prod_{i\in I} \Hom_A(M_i, N )$. Descriu explícitament l'isomorﬁsme.
+    \end{enumerate}
+Ara, utilitzant (ii), reprova (iv) de l'exercici 26.
 \end{tcolorbox}
-\subsection{Exercici 29}
+\subsection{Exercici 29.1}
+Sigui $\phi:\Hom_A\left(M, \prod_{i\in I} N_i\right)\to \prod_{i\in I}\Hom_A (M,N_i)$ que envia $f\mapsto(\pi_i \circ f)_i$. I per la propietat universal del producte, tenim que existeix un únic morfisme que fa commutar el diagrama. I justament del fet que el diagrama commuta se'n deriva que $\phi$ és un isomorfisme.
+\subsection{Exercici 29.2}
+Notem que aquest resultat és el dual de l'anterior, per tant, ja estem.
+\subsection{Exercici 29.3}
+Hem de veure que si $M$ és un $A$-mòdul lliure de rang finit, aleshores $\Hom(A^n,A)\simeq \Hom(A,A)^n\simeq A^n$.
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 30}]
+    Sigui $M\neq0$ un $A$-mòdul lliure. Prova que $M$ és fidel. També que si $M\subseteq A$, llavors $M$ és cíclic.
+\end{tcolorbox}
+\subsection{Exercici 30}
+Notem que un element de la base només pot ser anul·lat per 0, i per tant, $\Ann(M)=0$. I com que si $M\subseteq A$, aleshores sigui $e_1$ un element de la base. Aleshores $Ae_1\simeq A$ (ja que $e_1$ és element de la base); i com que $M\subseteq A$, tenim que $M=Ae_1$.
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 34}]
+Recordem que donada una aplicació $f: M\to N$, es diu que $s: N\to M$ és una secció si $f \circ s = \Id_N$, i que $r: N\to M$ és una retraccio si $r\circ f= \Id_M$.\par
+És evident que si eisteix una secció, $f$ ha de ser exhaustiva, i $s$ ha de ser injectiva; i que si existeix una retracció, $f$ ha de ser injectiva i $r$ exhaustiva.\par
+Si $M,N$ són $A$-mòduls i $f$ és morfisme de $A$-mòduls, direm que existeix una secció (com a $A$-mòduls) si $s$ també és un morfisme de $A$-mòduls, i de la mateixa manera per a una retracció (la existència de seccions o de retraccions com a conjunts, no implica la existència com a $A$-mòduls).\par
+Sigui 
+\[
+    0\to M \xrightarrow{f} N \xrightarrow{g} L \to 0
+\]
+una successió exacta de $A$-mòduls. Demostreu que és equivalent:
+\begin{enumerate}
+    \item $g$ admet una secció $s$.
+    \item $f$ admet una retracció $r$.
+\end{enumerate}
+En aquest cas, demostreu que $N=f(M)\oplus s(L)\simeq M\oplus L$, i direm que aquesta successió exacta escindeix. Raoneu que donats $A$-mòduls $M$ i $L$ la successió exacta és natural
+\[
+0\to M\xrightarrow{i _M} M\oplus L \xrightarrow{\pi_L} L\to 0
+\]
+escindeix.\par
+Finalment, demostreuq que són equivalents
+\begin{enumerate}
+    \item La successió exacta $0\to M\xrightarrow{f} N\xrightarrow{g} L\to 0$ escindeix.
+    \item Existeix un diagrama commutatiu de la forma
+\begin{center} 
+    \begin{tikzpicture}
+        \node (A) at (0,0) {0};
+        \node (B) at (1.5,0) {$M$};
+        \node (C) at (3,0) {$N$};
+        \node (D) at (4.5,0) {$L$};
+        \node (E) at (6,0) {$0$};
 
+        \node (AA) at (0,-1.5) {0};
+        \node (BB) at (1.5,-1.5) {$M$};
+        \node (CC) at (3,-1.5) {$M\oplus L$};
+        \node (DD) at (4.5,-1.5) {$L$};
+        \node (EE) at (6,-1.5) {$0$};
+        \draw[->] (A) -> (B) node[midway, above] {};
+        \draw[->] (B) -> (C) node[midway, above] {$f$};
+        \draw[->] (C) -> (D) node[midway, above] {$g$};
+        \draw[->] (D) -> (E) node[midway, above] {};
+
+        \draw[->] (AA) -> (BB) node[midway, above] {};
+        \draw[->] (BB) -> (CC) node[midway, above] {$i_M$};
+        \draw[->] (CC) -> (DD) node[midway, above] {$\pi_L$};
+        \draw[->] (DD) -> (EE) node[midway, above] {};
+
+        \draw[->] (B) -> (BB) node[midway, left] {$\Id_M$};
+        \draw[->] (C) -> (CC) node[midway, left] {$\sigma$};
+        \draw[->] (D) -> (DD) node[midway, left] {$\Id_L$};
+    \end{tikzpicture}
+\end{center}
+per algun $\sigma$.
+\end{enumerate}
+Demostreu també, que si $L$ és lliure, la successió sempre s'escindeix, i que si en canvi $A$ és DI, i $N=A$, $M\neq 0$ aleshores la successió mai s'escindeix.
+\end{tcolorbox}
+\subsection{Exercici 34.2}
+Hem de veure que $N=f(M)\oplus s(L)\simeq M\oplus L$. Primer veurem que $N=f(M)\oplus s(L)$.\\
+Sigui $n\in N$, volem veure que $n$ es pot expressar de manera única de la forma $n=l+m$, on $l\in s(L)$, i $m\in f(M)$. Considerem:
+\[
+    n = \underbrace{s(g(n))}_{l} + \underbrace{(n-s(g(n)))}_{m}
+\]
+Notem que és evident que $s(g(n))\in s(L)$. Per tant, hem de veure que $n-l\in f(M)$, però com que la successió és exacta, $f(M)=\ker(g)$, i com que $g(n-l)=g(n)-g(s(g(n)))$; però recordem que $g\circ s =\Id_N$, per tant, ens queda $g(n-l)=g(n)-g(n)=0$, que és el que volíem veure.\\
+Per veure que aquesta manera és única, utilitzarem que té retracció, i que donada una secció, és de la forma $r(n)=f\inv(n-s(g(n)))$: considerem $0=m+l$ amb $m\in f(M)$ i $l\in s(L)$, aleshores $r(0)=0=r(m)+r(l)=r(m)=0$, per tant, $m=0$ ($m$ està a la imatge, per tant, $r(m)=r(f(a))=a=0$), i un cop tenim $m=0$, és immediat veure que $l=0$.
+
+\par
+
+Per tant, tenim que $N=f(M)\oplus s(L)$, però com que $f$ i $s$ són injectives, tenim que $f(M)\simeq M$ i $s(L)\simeq L$.
+\subsection{Exercici 34.1}
+\textbf{Secció $\implies$ Retracció:}\\
+Ara que hem vist que si existeix secció, aleshores per tot $n\in N$, $n=m+l$. Com que $f$ és injectiva, considerem $r(n) = f\inv(m)=f\inv(n-s(g(n)))$. Notem que si veiem que $r$ és $A$-lineal, ja estarem. Per tant, considerem $r(n_1+an_2)$
+\begin{align*}
+    r(n_1+an_2)&=f\inv[n_1+an_2-s(g(n_1+an_2))]\\
+    &=f\inv[n_1-s(g(n_1))+an_2-as(g(n_2))]
+\end{align*}
+I sigui $m_1= r(n_1)$ i $m_2=r(n_2)$, aleshores:
+\[
+    m_1+am_2=f\inv[f(m_1+am_2)]=f\inv[f(m_1)+af(m_2)]=r(n_1+an_2)
+\]
+Que és el que volíem veure.\\[4mm]
+\textbf{Retracció $\implies$ Secció}
+Considerem ara la descomposició $n = m + l= f(r(n))+ [n-f(r(n))]$ i sigui $s(g(n))=n-f(r(n))$. Notem que com que $g$ és exhaustiva aquesta definició funciona per tot $L$. Hem de veure que aquesta definició té sentit: sigui $n$ tals que $g(n)=g(0)=0$ (és a dir, $n\in \Ima (f)$, i per tant, podem escriure $n=f(a)$):
+\[
+    s(0)=s(g(n))=n-f(r(n))=f(a)-f(r(f(a)))=0
+\]
+Que és el que volíem veure.
+\subsection{Exercici 34.3}
+Hem de veure que aquesta successió escindeix. Però considerem $r=\pi_{M}$, i $s=i_L$, aleshores hem de veure que les composicions són la identitat. Però és bastant evident que $\pi_M \circ i_M=\Id_M$ i que $\pi_L \circ i_L=\Id_L$.
+\subsection{Exercici 34.4}
+Ara hem de veure que es dona la equivalència.\\[2mm]
+\textbf{1 implica 2:}\\
+Sigui $\sigma(n)=r(n)+g(n)$. Notem que hem de veure que $\sigma\circ f = i_M$, i que $g = \pi_L \circ \sigma$.
+\[
+\begin{cases*}
+    \sigma(f(m))=r(f(m))+g(f(m))=m\\
+    \pi_L(\sigma(n))=\pi_L(r(n))+\pi_L(g(n))=g(n)\\
+\end{cases*}    
+\]
+Que és el que havíem de veure.\\[2mm]
+\textbf{2 implica 1:}\\
+Pel lemma dels 5 $\sigma$ és un isomorfisme, per tant existeix $\sigma \inv$, i si considerem $s = \sigma \inv \circ i_L$, i $r = \pi_L\circ \sigma$.
+\subsection{Exercici 34.5}
+Notem que si $L$ és lliure, i $g$ és exhaustiva, aleshores veurem que té secció. Si prenem una base de $L$, per tot $e_i$ en tenim prou en fixar quant val $s(e_i)$. Sigui $n_i$ un element que té per imatge $e_i$; com que $g$ és exhaustiva, aquest element existeix, i per tant, podem definir $s(e_i)=n_i$; i estendre $s$ per linealitat. Com que no hi ha cap relació entre els elements, no tindrem problemes de definció.
+\subsection{Exercici 34.6}
+Notem que si $N=A$ és DI, aleshores la única manera de tenir $A=M\oplus L$ és quan $M=0$ o $L=0$.
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 35}(Lema de la Serp)]
+Donat un diagram commutatiu de $A$-mòduls amb files exactes
+\begin{center}
+    \begin{tikzpicture}
+        \node (B) at (1.5,0) {$M'$};
+        \node (C) at (3.0,0) {$M$};
+        \node (D) at (4.5,0) {$M''$};
+        \node (E) at (6.0,0) {$0$};
+        
+        \node (AA) at (0.0,-1.5) {$0$};
+        \node (BB) at (1.5,-1.5) {$N'$};
+        \node (CC) at (3.0,-1.5) {$N$};
+        \node (DD) at (4.5,-1.5) {$N'$};
+
+        \draw[->] (B)--(C) node[midway, above] {$f$};
+        \draw[->] (C)--(D) node[midway, above] {$g$};
+        \draw[->] (D)--(E);
+        
+        \draw[->] (AA)--(BB);
+        \draw[->] (BB)--(CC) node[midway, above] {$f'$};
+        \draw[->] (CC)--(DD) node[midway, above] {$g'$};
+        
+        \draw[->] (B)--(BB) node[midway, right] {$\alpha'$};
+        \draw[->] (C)--(CC) node[midway, right] {$\alpha$};
+        \draw[->] (D)--(DD) node[midway, right] {$\alpha''$};
+
+    \end{tikzpicture}
+\end{center}
+Demostreu que existeix una successió exacta de $A$-mòduls.
+\[
+    \ker(\alpha')\xrightarrow{f}\ker(\alpha)\xrightarrow{g}\ker(\alpha'')\xrightarrow{\delta}\coker(\alpha')\xrightarrow{f'}\coker(\alpha)\xrightarrow{g'}\coker(\alpha'')
+\]
+\end{tcolorbox}
+\subsection{Exercici 35}
+Considerem el següent diagrama:
+\begin{center}
+    \begin{tikzpicture}[scale=1.5]
+        \node (B) at (1.5,0) {$M'$};
+        \node (C) at (3.0,0) {$M$};
+        \node (D) at (4.5,0) {$M''$};
+        \node (E) at (6.0,0) {$0$};
+        
+        \node (AA) at (0.0,-1.5) {$0$};
+        \node (BB) at (1.5,-1.5) {$N'$};
+        \node (CC) at (3.0,-1.5) {$N$};
+        \node (DD) at (4.5,-1.5) {$N'$};
+        
+        \node (b) at (1.5,1.5) {$\ker(\alpha')$};
+        \node (c) at (3.0,1.5) {$\ker(\alpha)$};
+        \node (d) at (4.5,1.5) {$\ker(\alpha'')$};
+        
+        \node (bb) at (1.5,-3) {$\coker(\alpha')$};
+        \node (cc) at (3.0,-3) {$\coker(\alpha)$};
+        \node (dd) at (4.5,-3) {$\coker(\alpha'')$};
+        
+        \draw[->] (B)--(C) node[midway, above] {$f$};
+        \draw[->] (C)--(D) node[midway, above] {$g$};
+        \draw[->] (D)--(E);
+        
+        \draw[->] (AA)--(BB);
+        \draw[->] (BB)--(CC) node[midway, above] {$f'$};
+        \draw[->] (CC)--(DD) node[midway, above] {$g'$};
+        
+        \draw[->] (B)--(BB) node[midway, right] {$\alpha'$};
+        \draw[->] (C)--(CC) node[midway, right] {$\alpha$};
+        \draw[->] (D)--(DD) node[midway, right] {$\alpha''$};
+        
+        \draw[->] (b)--(B) node[midway, right] {$i_{M'}$};
+        \draw[->] (c)--(C) node[midway, right] {$i_{M}$};
+        \draw[->] (d)--(D) node[midway, right] {$i_{M''}$};
+        \draw[->] (b)--(c) node[midway, above] {$\ol f$};
+        \draw[->] (c)--(d) node[midway, above] {$\ol g$};
+
+        \draw[->] (BB)--(bb) node[midway, right] {$\pi_{M'}$};
+        \draw[->] (CC)--(cc) node[midway, right] {$\pi_{M}$};
+        \draw[->] (DD)--(dd) node[midway, right] {$\pi_{M''}$};
+        \draw[->] (bb)--(cc) node[midway, above] {$\ol{f'}$};
+        \draw[->] (cc)--(dd) node[midway, above] {$\ol{g'}$};
+
+        \draw[color=red, dashed, ->] (d)--(bb) node[pos = 0.55, above] {$\delta$};
+    \end{tikzpicture}
+\end{center}
+On $\ol f$ és la restricció de $f$ a $\ker(\alpha')$, i el mateix amb les altres $\ol*$. Quan sigui evident de què estic parlant, la barra poder desapareix.\par
+\textbf{Pas 1: $\Ima(\ol{f})=\ker(\ol{g})$}\\
+Sigui $x\in \ker(\ol{g})$, aleshores $x\in \ker(g)$, i per tant, existeix $y\in M'$ tal que $x = f(y)$. Notem que $f'(\alpha'(y))=\alpha(f(y))=\alpha(x)=0$, però com que $f'$ és injectiva $\alpha'(y)=0$, i per tant $y\in \ker(\alpha')$, amb $\ol f(y)=x$. Que ens diu que $\ker(\ol{g})\subseteq \Ima(\ol f)$.\\
+Però l'altra inclusió és immediata, ja que $g\circ f=0$.\\[5mm]
+\textbf{Pas 2: $\Ima(\ol{f'})=\ker(\ol{g'})$}\\
 
 \end{document}
 % ---
