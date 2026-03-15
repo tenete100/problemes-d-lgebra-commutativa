@@ -549,7 +549,10 @@ Notem que en aquesta definició, tot era únic, excepte el pas de la tria de la 
 Sigui $y_1$ i $y_2$ dues tries de $y$, tals que $g(y_1)=g(y_2)=x$. Aleshores considerem $g(\underbrace{y_1-y_2}_{Y})=0$, aleshores, existeix algun $t\in M'$ tal que $f(t)=Y$, aleshores, $\pi_{M'}\circ\alpha'(t)=0$, per tant, si agafes $\delta(x)$ no depèn de la tria de $y$.\\
 Veure que $\delta$ és $A$-lineal, es pot deduïr de que totes les aplicacions són $A$-lineals, i que tots els quadrats commuten.\\[5mm]
 \textbf{Pas 3: $\Ima (\ol g)=\ker(\delta)$}\\
-Sigui $x \in \ker \delta$, aleshores tenim que $\ol z=0$, i per tant, $z\in \Ima(\alpha')$, que ens diu que existeix un $t\in M'$ tal que $\alpha'(z)=t$. Aleshores com que el diagrama commuta, tenim que $y=f(t)$, i per tant, 
+Sigui $x \in \ker \delta$, aleshores tenim que $\ol z=0$, i per tant, $z\in \Ima(\alpha')$, que ens diu que existeix un $t\in M'$ tal que $\alpha'(t)=z$, i com que $f'\circ\alpha'(t)=\alpha\circ f(t)=f'(z)$, aleshores com que està a la imatge per $\alpha$, tenim que existeix $y$ tal que $\alpha(y)=f'(z)$. Per tant, $\ker (\delta)\subseteq \Ima(g)$.\\
+Per veure l'altra inclusió, notem que si tenim un $x\in \Ima(g')$, aleshores prenem $y\in \ker(\alpha)$ tal que $g(y)=x$. Aleshores, si ara fem $\alpha(y)=0$, i per tant, $z=0$ (si prenem diferents representants en comptes de $y$, tindrem $z\in \Ima$). Que és el que volíem veure.\\[5mm]
+\textbf{Pas 4: $\Ima(\delta)=\ker(\ol{f'})$}\\
+Sigui $\ol z\in \ker(\ol{f'})$, aleshores notem que $\pi_M(f'(z))=0$, per tant, $\ol{f'(z)}$ està a la imatge de $\alpha$, i per tant, existeix $y\in M$ tal que $\alpha(y)=f'(z)$, aleshores, sigui $x=g(y)$
 \end{document}
 % ---
 % \newpage
