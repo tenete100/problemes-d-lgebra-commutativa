@@ -554,6 +554,134 @@ Per veure l'altra inclusió, notem que si tenim un $x\in \Ima(g')$, aleshores pr
 \textbf{Pas 4: $\Ima(\delta)=\ker(\ol{f'})$}\\
 Sigui $\ol z\in \ker(\ol{f'})$, aleshores notem que $\pi_M(f'(z))=0$, per tant, $\ol{f'(z)}$ està a la imatge de $\alpha$, i per tant, existeix $y\in M$ tal que $\alpha(y)=f'(z)$, aleshores, sigui $x=g(y)$, que ens diu que hem trobat una $x$ que $\delta(x)=\ol z$, i del fet que $\alpha''\circ g(y)=g'\circ \alpha(y)=g'\circ f'(z)=0$, tenim que $x\in \ker(\alpha'')$.\\
 Per veure l'altra inclusió, sigui $x\in \ker(\alpha'')$, aleshores, $\ol{f'}\circ\delta(x)=\pi_M\circ f'(z)$, però definim $z$ tal que $f'(z)=\alpha(y)$, per tant, $\pi_M(f'(z))=0$. Que és el que volíem veure.
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 37}]
+    Donada una successió de $A$-mòduls
+    \[
+        M'\xrightarrow{f}M\xrightarrow{g}M''
+    \]
+    Demostra que n'existeix una d'exacta:
+    \[
+        0\to \ker(f)\xrightarrow{i}\ker(gf)\xrightarrow{f}\ker(g)\xrightarrow{\pi}\coker(f)\xrightarrow{g}\coker(gf)\xrightarrow{\sigma}\coker(g)\to 0
+    \]
+    on $i$ és la inclusió natural, i $\pi$ i $\sigma$ les projeccions als respectius quocients.
+\end{tcolorbox}
+\subsection{Exercici 37}
+Considerem el següent diagrama:
+\begin{center}
+    \begin{tikzpicture}[scale = 3.5]
+        \node (M') at (0,0) {$M'$};
+        \node (M) at (1,0) {$M\oplus M'$};
+        \node (M'') at (2,0) {$M$};
+        \node (N') at (0,-1) {$M$};
+        \node (N) at (1,-1) {$M\oplus M''$};
+        \node (N'') at (2,-1) {$M''$};
+        \node (inj) at (-1,-1) {$0$};
+        \node (exh) at (3,0) {$0$};
+        \node[text = black!60!white] (start) at (-1,1) {$0$};
+        \node[text = black!60!white] (ker1) at (0,1) {$\ker(f)$};
+        \node[text = black!60!white] (ker2) at (1,1) {$\ker(gf)$};
+        \node[text = black!60!white] (ker3) at (2,1) {$\ker(g)$};
+        \node[text = black!60!white] (coker1) at (0,-2) {$\coker(f)$};
+        \node[text = black!60!white] (coker2) at (1,-2) {$\coker(gf)$};
+        \node[text = black!60!white] (coker3) at (2,-2) {$\coker(g)$};
+        \node[text = black!60!white] (end) at (3,-2) {$0$};
+        \draw[->] (M')--(M)    node[midway, above] {$\alpha = (f(m'),m')$};
+        \draw[->] (M)--(M'')   node[midway, above] {$\beta = f(m')-m$};
+        \draw[->] (M'')--(exh);
+        \draw[->] (inj)--(N');
+        \draw[->] (N')--(N)    node[midway, above] {$\gamma = (m,g(m))$};
+        \draw[->] (N)--(N'')   node[midway, above] {$\delta = m''-g(m)$};
+        \draw[->] (M')--(N')   node[midway, right] {$f$};
+        \draw[->] (M)--(N)     node[midway, right] {$(m,g\circ f(m'))$};
+        \draw[->] (M'')--(N'') node[midway, right] {$g$};
+        \draw[->, color = black!60!] (start)--(ker1);
+        \draw[->, color = black!60!] (ker1)--(ker2) node[midway, above] {$i$};
+        \draw[->, color = black!60!] (ker2)--(ker3) node[midway, above] {$f$};
+        \draw[->, color = black!60!] (coker1)--(coker2) node[midway, above] {$g$};
+        \draw[->, color = black!60!] (coker2)--(coker3) node[midway, above] {$\sigma$};
+        \draw[->, color = black!60!] (coker3)--(end);
+        \draw[->, color = black!60!] (ker1)--(M') ;
+        \draw[->, color = black!60!] (ker2)--(M);
+        \draw[->, color = black!60!] (ker3)--(M'');
+        \draw[->, color = black!60!] (N')--(coker1);
+        \draw[->, color = black!60!] (N)--(coker2);
+        \draw[->, color = black!60!] (N'')--(coker3);
+        \draw (-1.25,0.25)--(3.25,0.25)--(3.25,-1.25)--(-1.25,-1.25)--cycle;
+        \node[below right] at (-1.25,-1.25) {Lema de la serp};
+    \end{tikzpicture}
+\end{center}
+Per tant, hem de veure que aquest diagrama commuta, que les files (del lema de la serp) són exactes, el morfisme de connexió és el que es diu que és, i que podem posar 0 als extrems de la successió.\\[4mm]
+\textbf{Els quadrats commuten}\\
+Sigui $a\in \ker(f)$, aleshores, $(f(a),a)=(0,a)$, i pel camí oposat tenim el mateix.\\
+Sigui $a\in \ker(gf)$, aleshores $f(a)$, i pel camí oposat tenim el mateix.\\
+Sigui $a\in M'$, aleshores els dos camins donen $(f(a),gf(a))$.\\
+Sigui $(a,b)\in M\oplus M'$, aleshores els dos camins donen $g(f(b))-g(a)$.\\
+Sigui $a\in M$, aleshores els dos camins donen $g(a)+\Ima(gf)$.\\
+Sigui $(a,b)\in M\oplus M''$, aleshores els dos camins donen $b-g(a)+\Ima(g)$.\\
+Que és el que volíem veure.\\[4mm]
+\textbf{Les files són exactes}\\
+Per la primera fila del lema de serp, hem de veure que $\ker(\beta) = \Ima(\alpha)$. 
+\[
+f(m')-m = 0 \iff m = f(m')
+\]
+és a dir, que $(m,m') = (f(m'),m')=\alpha(m')$.\\
+I com que a més $\beta$ és exhaustiva, tenim que la primera fila és exacta.\\[3mm]
+Per veure que la segona fila és exacta fem el mateix.\\[4mm]
+\textbf{Morfisme de connexió}\\
+Hem de veure que el morfisme de connexió és efectivament $\pi$, sigui $x\in \ker(g)$, aleshores prenem l'element de $(x,0)\in M\oplus M'$. Ara hem de prendre un $y\in M$ tal que $\gamma(y)=(x,0)$, per tant, si prenem $y=x$: com que $g(x)=0$ satisfà l'equació. Per tant, el morfisme de conexió en $x$ és $\ol{x}$, que és el que volíem veure.\\[4mm]
+Amb el que acabem de veure, tenim que podem aplicar el lema de la serp i ens diu que
+\[
+    \ker(f)\to \ker(gf)\to\ker(g)\to\coker(f)\to\coker(gf)\coker(g)
+\]
+és una successió exacta. Però l'enunciat ens demana de veure que s'hi poden afegir uns zeros als extrems:\\[2mm]
+\textbf{Els zeros}\\
+Hem de veure que la inclusió $i$ és injectiva; però això és cert. I també ens demana de veure que el pas al quocient de $\coker(gf)\to \coker(gf)/\Ima(g)$ és exhaustiu, però això també és cert. Per tant, ja estem.
+
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 39}]
+    Demostra les següents propietats del producte tensorial (sobre l'anell $A$):
+\begin{enumerate}
+    \item $M\otimes N\simeq N\otimes M$.
+    \item $M\otimes(N\otimes P)\simeq (M\otimes N)\otimes P$.
+    \item $M\otimes\left(\bigoplus_{i\in I}M_i\right)=\bigoplus_{i\in I}M\otimes M_i$.
+    \item $A\otimes M\simeq M$.
+    \item $M\otimes A/I\simeq M/IM$, per qualsevol ideal $I$ de $A$.
+\end{enumerate}
+\end{tcolorbox}
+Recordem la propietat universal del producte tensorial: el producte tensorial de 2 mòduls és una parella $(M\otimes N, \omega:M\times N\to M\otimes N)$ que satisfà que donada una aplicació bilineal $f:M\times N\to L$, existeix una aplicació lineal $u: M\otimes N\to L$ tal que $f= u\circ \omega$. És a dir, el següent diagrama commuta:
+\begin{center}
+    \begin{tikzpicture}
+        \node (MxN) at (0,2) {$M\times N$};
+        \node (MoN) at (3,2) {$M\otimes N$};
+        \node (L) at (3,0) {$L$};
+        \draw[->] (MxN) -- (MoN) node[midway, above] {$\omega$};
+        \draw[->] (MxN) -- (L) node[midway, above] {$f$};
+        \draw[dashed, ->] (MoN) -- (L) node[midway, right] {$u$};
+    \end{tikzpicture}
+\end{center}
+\subsection{Exercici 39.1}
+Notem que $M\times N\simeq N\times M$ (per la propietat universal del producte cartesià). Per tant, si anomenem $\phi$ al isomorfisme, tenim
+\begin{center}
+    \begin{tikzpicture}
+        \node (MxN) at (0,2) {$M\times N$};
+        \node (NxM) at (-2,2) {$N\times M$};
+        \node (MoN) at (3,3) {$M\otimes N$};
+        \node (NoM) at (-5,3) {$M\otimes N$};
+        \node (L) at (-1,0) {$L$};
+        \draw[->] (NxM) -- (MxN) node[midway, above] {$\phi$};
+        \draw[->] (MxN) -- (MoN) node[midway, above] {$\omega_1$};
+        \draw[->] (NxM) -- (NoM) node[midway, above] {$\omega_2$};
+        \draw[->] (MxN) -- (L) node[midway, right] {$f$};
+        \draw[->] (NxM) -- (L) node[midway, right] {$f'$};
+        \draw[dashed, ->] (MoN) -- (L) node[midway, right] {$u$};
+        \draw[dashed, ->] (NoM) -- (L) node[midway, below] {$u'$};
+    \end{tikzpicture}
+\end{center}
+Notem que com que per definició el producte tensorial és únic llevat d'isomorfisme, i tenim que $(M\otimes N, \omega_2\circ \phi)$ és també un producte tensorial vàlid, ja estem.
+\subsection{Exercici 39.2}
+Notem que 
+
 \end{document}
 % ---
 % \newpage
