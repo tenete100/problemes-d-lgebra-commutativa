@@ -680,8 +680,48 @@ Notem que $M\times N\simeq N\times M$ (per la propietat universal del producte c
 \end{center}
 Notem que com que per definició el producte tensorial és únic llevat d'isomorfisme, i tenim que $(M\otimes N, \omega_2\circ \phi)$ és també un producte tensorial vàlid, ja estem.
 \subsection{Exercici 39.2}
-Notem que 
-
+Notem que tenim que per qualsevol funció trilineal $f:M\times N\times P\to L$:
+\begin{center}
+    \begin{tikzpicture}
+        \node (MxNxP) at (0,0) {$M \times N \times P$};
+        \node (MxNoP) at (3,0) {$M \times (N \otimes P)$};
+        \node (MoNxP) at (-3,0) {$(M \otimes N) \times P$};
+        \node (MoNOP) at (6,0) {$M \otimes (N \otimes P)$};
+        \node (MONoP) at (-6,0) {$(M \otimes N) \otimes P$};
+        \node (L) at (0,-2) {$L$};
+        
+        \draw[->] (MxNxP) -- (MoNxP) node[midway, above] {$\omega_{M\times N}$};
+        \draw[->] (MxNxP) -- (MxNoP) node[midway, above] {$\omega_{N\times P}$};
+        \draw[->] (MxNoP) -- (MoNOP) node[midway, above] {$\omega_1$};
+        \draw[->] (MoNxP) -- (MONoP) node[midway, above] {$\omega_2$};
+        \draw[->] (MxNxP) -- (L) node[midway, right] {$f$};
+        \draw[dashed, ->] (MoNxP) -- (L) node[midway, below] {$u_1$};
+        \draw[dashed, ->] (MxNoP) -- (L) node[midway, below] {$u_2$};
+        \draw[dashed, ->] (MONoP) -- (L) node[midway, below] {$u_3$};
+        \draw[dashed, ->] (MoNOP) -- (L) node[midway, below] {$u_4$};
+    \end{tikzpicture}
+\end{center}
+On $u_1$ i $u_2$ són bilineals; i $u_3$ i $u_4$ són lineals: per tant, els extrems són el producte tensorial, i per tant, són isomorfs.
+\subsection{Exercici 39.3}
+\begin{center}
+    \begin{tikzpicture}
+        \node (MxM1) at (0,0) {$M\times M_1$};
+        \node (MxM2) at (2,0) {$M\times M_2$};
+        \node (pts) at (4,0) {$\dots$};
+        \node (MxMi) at (6,0) {$M\times M_i$};
+        \node (MxSMi) at (2,-2) {$M\times \bigoplus _{i\in I}M_i$};
+        \node (MoSMi) at (6,-2) {$M\otimes \bigoplus _{i\in I}M_i$};
+        \node (L) at (4,-4) {$L$};
+        \draw[->](MxM1)--(MxSMi);
+        \draw[->](MxM2)--(MxSMi);
+        \draw[->](pts)--(MxSMi);
+        \draw[->](MxMi)--(MxSMi);
+        \draw[->](MxSMi)--(L) node [midway, below] {$f$};
+        \draw[->](MxSMi)--(MoSMi) node [midway, below] {$\omega$};
+        \draw[->, dashed](MoSMi)--(L) node [midway, below] {$u$};
+    \end{tikzpicture}
+\end{center}
+Notem que qualsevol aplicació bilineal de $f:M\times M_i$ es pot mirar com una aplicació bilineal de $M\times\oplus M_i$ fent que si $j\neq i$ $\ol f\mid_{M\times M_j}=0$, i sinó $\ol f\mid_{M\times M_i} = f$; d'aquesta manera podem construïr un morfisme al producte tensorial original com $\omega\circ\iota_i$
 \end{document}
 % ---
 % \newpage
