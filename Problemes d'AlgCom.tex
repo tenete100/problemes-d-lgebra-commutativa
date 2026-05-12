@@ -57,7 +57,7 @@ I ens queda que l'únic element que hem d'invertir és $a_0$ (ens queda que hem 
 \subsection{Exercici 2.2}
 Suposem que $f$ té algun $a_n$ que no és nilpotent. Sigui $a_n$ el de menor grau. Considerem $f^k$ amb $k$ prou gran com per que $a_i^k=0$ per $i<n$. Aleshores $f(X)^k=a^{k}_nX^{nk}+\dots=X^{nk}\underbrace{(a_n^k+\dots)}_{g(X)}$, però $f(X)^{kl}=X^{nkl}g(X)^l$ amb $b_0$ un element que no és nilpotent; i això és una contradicció, ja que tindrem un element que mai valdrà 0.
 \subsection{Exercici 2.3}
-Sigui $I$ un ideal, i sigui $n=\min_{p\in I}\{\text{ordre de }p\}$, i $f$ un polinomi d'ordre $n$. Com que $k$ és un cos, aleshores podem trencar $f(X)=g(X)X^n$ amb $g$ invertible (pel primer apartat). Per tant, existeig $g^{-1}(X)g(X)=1$, és a dir: $f(X)g^{-1}(X)=X^n$, i d'aquí $(X^n)\subseteq I$; i l'altra implicació és evident.
+Sigui $I$ un ideal, i sigui $n=\min_{p\in I}\{\text{ordre de }p\}$, i $f$ un polinomi d'ordre $n$. Com que $k$ és un cos, aleshores podem trencar $f(X)=g(X)X^n$ amb $g$ invertible (pel primer apartat). Per tant, existeix $g^{-1}(X)g(X)=1$, és a dir: $f(X)g^{-1}(X)=X^n$, i d'aquí $(X^n)\subseteq I$; i l'altra implicació és evident.
 \newpage
 \begin{tcolorbox}[title=\section{Exercici 3}]
     Sigui $A$ un anell. Donat un polinomi $h=h_0+\dots +h_nX^n$ de $A[X]$, definim el contingut $c(h)$ de $h$ com l'ideal d'$A$ generat pels seus coeficients.
@@ -142,7 +142,7 @@ Sigui $A$ un anell i $\eta(A)$ el seu nilradical. Prova que són equivalents:
 
 \newpage
 \begin{tcolorbox}[title=\section{Exercici 8}]
-Sigui $A$ un anell. Es deﬁneix el radical de Jacobson de $A$ com l'ideal $J(A)$ intersecció de tots els ideals maximals de $A$.
+Sigui $A$ un anell. Es defineix el radical de Jacobson de $A$ com l'ideal $J(A)$ intersecció de tots els ideals maximals de $A$.
 \begin{enumerate}
     \item Proveu que: $x \in J(A) \iff \forall y \in A, 1 - xy$ és invertible en $A$.
     \item Proveu que la suma d'un element del radical de Jacobson i una unitat és una unitat.
@@ -155,16 +155,16 @@ Sigui $A$ un anell commutatiu tal que $a^2=a$ per a tot $a\in A$ (un tal $A$ es 
 \begin{enumerate}
     \item Tot ideal primer $\mfrk p$ de $A$ és maximal i $A/\mfrk p\cong \FF_2$.
     \item $\bigcap_{\mfrk m\in\mathrm{Max}\;A}\mfrk m=0$.
-    \item Per cada $\mfrk m \in \mathrm{Max}\;A$, sigui $\phi_\mfrk {m} : A \to A/\mfrk m$ el morﬁsme de pas al quocient. Proveu que
+    \item Per cada $\mfrk m \in \mathrm{Max}\;A$, sigui $\phi_\mfrk {m} : A \to A/\mfrk m$ el morfisme de pas al quocient. Proveu que
 \[
 \begin{array}{rrl}
     A&\xrightarrow{\Phi} &\prod _{\mfrk m\in \mathrm{ Max}\; A}A/\mfrk m\\
     a&\mapsto &(\phi_m(a))
 \end{array}
 \]
-és un morﬁsme injectiu d'anells, i que si $\mathrm {Max}\;A$ és ﬁnit llavors $\Phi$ és un isomorﬁsme.
-Deduïu que $A$ és ﬁnit si i només si $\mathrm{Max}\;A$ és ﬁnit.
-\item  $2a = 0$ per tot $a \in A$, i que tot ideal ﬁnitament generat de $A$ és principal.\\
+és un morfisme injectiu d'anells, i que si $\mathrm {Max}\;A$ és finit llavors $\Phi$ és un isomorfisme.
+Deduïu que $A$ és finit si i només si $\mathrm{Max}\;A$ és finit.
+\item  $2a = 0$ per tot $a \in A$, i que tot ideal finitament generat de $A$ és principal.\\
 (Indicació: $(a, b) = (a + b + ab)$.)
 \end{enumerate}
 \end{tcolorbox}
@@ -179,7 +179,7 @@ Com que els ideals maximals són els ideals primers
     J(A)=\eta(A)=0
 \]
 \subsection{Exercici 9.3}
-Sigui $a\in\ker(\Phi)$; alehores
+Sigui $a\in\ker(\Phi)$; aleshores
 \[
     \Phi(a)=(0,0,0,\dots)\iff a\in\bigcap _{\mfrk m\in\mathrm {Max}\;A}\mfrk m=0
 \]
@@ -252,7 +252,7 @@ Notem que $a\in (I:\sum J_i)$, aleshores $a\sum J_i\subseteq I$, és a dir, com 
 Considerem la funció $\phi: \Hom_A(A/I,M)\to \{m\in M\mid \Ann(m)\supset I\}$ que envia $f\mapsto f(1)$
 \newpage
 \begin{tcolorbox}[title=\section{Exercici 22}]
-    Sigui $K$ un cos, $E$ un $K$-espai vectorial de dimensió ﬁnita, $\phi \in \End_K (E)$. Considerem a $E$ com a $K[X]$-mòdul amb l'estructura deﬁnida per $\phi$. Prova que $E$ no és ﬁdel com $K[X]$-mòdul i descriu el seu anul·lador. (Recordem que un $A$-mòdul és ﬁdel si $\Ann(M) = 0$.)
+    Sigui $K$ un cos, $E$ un $K$-espai vectorial de dimensió finita, $\phi \in \End_K (E)$. Considerem a $E$ com a $K[X]$-mòdul amb l'estructura definida per $\phi$. Prova que $E$ no és fidel com $K[X]$-mòdul i descriu el seu anul·lador. (Recordem que un $A$-mòdul és fidel si $\Ann(M) = 0$.)
 \end{tcolorbox}
 \subsection{Exercici 22}
 Notem que el polinomi característic de $\phi$ divideix el polinomi mínim de $\phi$, és a dir, $\ol 0=\ol{p}$ (on $p$ és el polinomi característic de $\phi$); és a dir:
@@ -291,7 +291,7 @@ Per tant, el nucli d'aquest morfisme és $\Ann(M)$, i pel teorema d'isomorfia, j
         \item Si $M$ és de torsió i $N$ lliure de torsió, llavors $Hom_A(M, N ) = 0$.
         \item Si $M$ és lliure, $M$ és lliure de torsió.
         \item Si $M$ és cíclic i lliure de torsió, llavors $M \simeq A$.
-        \item Cóm són els $\ZZ$-mòduls ﬁnit generats lliures de torsió?
+        \item Cóm són els $\ZZ$-mòduls finit generats lliures de torsió?
     \end{enumerate}
 \end{tcolorbox}
 \subsection{Exercici 27.1}
@@ -315,7 +315,7 @@ Notem que el $\ZZ$-mòduls són els grups abelians, i els que tenen torsió 0, s
         \item Tot mòdul simple és cíclic.
         \item Dona un exemple de mòdul cíclic no simple i un exemple de mòdul cíclic simple.
         \item Donat un anell $A$, descriu tots els seus $A$-mòduls simples.
-        \item Si $M$ i $N$ són $A$-mòduls simples i $f : M \to N$ és un morﬁsme, aleshores $f = 0$ o bé $f$ és un isomorﬁsme.
+        \item Si $M$ i $N$ són $A$-mòduls simples i $f : M \to N$ és un morfisme, aleshores $f = 0$ o bé $f$ és un isomorfisme.
     \end{enumerate}
 \end{tcolorbox}
 \subsection{Exercici 28.1}
@@ -332,8 +332,8 @@ Notem que $\Ima(f)$ és un submòdul de $N$, i per tant, o $f\equiv 0$, o és ex
 \begin{tcolorbox}[title=\section{Exercici 29}]
     Fent servir les propietats universals del producte directe i de la suma directa, prova el següent:
     \begin{enumerate}
-        \item $\Hom_A\left(M, \prod_{i\in I} N_i\right)\simeq \prod_{i\in I}\Hom_A (M,N_i)$. Descriu explícitament l'isomorﬁsme.
-        \item $\Hom_A\left(\bigoplus_{i\in I} M_i, N\right) \simeq \prod_{i\in I} \Hom_A(M_i, N )$. Descriu explícitament l'isomorﬁsme.
+        \item $\Hom_A\left(M, \prod_{i\in I} N_i\right)\simeq \prod_{i\in I}\Hom_A (M,N_i)$. Descriu explícitament l'isomorfisme.
+        \item $\Hom_A\left(\bigoplus_{i\in I} M_i, N\right) \simeq \prod_{i\in I} \Hom_A(M_i, N )$. Descriu explícitament l'isomorfisme.
     \end{enumerate}
 Ara, utilitzant (ii), reprova (iv) de l'exercici 26.
 \end{tcolorbox}
@@ -352,7 +352,7 @@ Notem que un element de la base només pot ser anul·lat per 0, i per tant, $\An
 \newpage
 \begin{tcolorbox}[title=\section{Exercici 34}]
 Recordem que donada una aplicació $f: M\to N$, es diu que $s: N\to M$ és una secció si $f \circ s = \Id_N$, i que $r: N\to M$ és una retraccio si $r\circ f= \Id_M$.\par
-És evident que si eisteix una secció, $f$ ha de ser exhaustiva, i $s$ ha de ser injectiva; i que si existeix una retracció, $f$ ha de ser injectiva i $r$ exhaustiva.\par
+És evident que si existeix una secció, $f$ ha de ser exhaustiva, i $s$ ha de ser injectiva; i que si existeix una retracció, $f$ ha de ser injectiva i $r$ exhaustiva.\par
 Si $M,N$ són $A$-mòduls i $f$ és morfisme de $A$-mòduls, direm que existeix una secció (com a $A$-mòduls) si $s$ també és un morfisme de $A$-mòduls, i de la mateixa manera per a una retracció (la existència de seccions o de retraccions com a conjunts, no implica la existència com a $A$-mòduls).\par
 Sigui 
 \[
@@ -368,7 +368,7 @@ En aquest cas, demostreu que $N=f(M)\oplus s(L)\simeq M\oplus L$, i direm que aq
 0\to M\xrightarrow{i _M} M\oplus L \xrightarrow{\pi_L} L\to 0
 \]
 escindeix.\par
-Finalment, demostreuq que són equivalents
+Finalment, demostreu que són equivalents
 \begin{enumerate}
     \item La successió exacta $0\to M\xrightarrow{f} N\xrightarrow{g} L\to 0$ escindeix.
     \item Existeix un diagrama commutatiu de la forma
@@ -450,7 +450,7 @@ Que és el que havíem de veure.\\[2mm]
 \textbf{2 implica 1:}\\
 Pel lemma dels 5 $\sigma$ és un isomorfisme, per tant existeix $\sigma \inv$, i si considerem $s = \sigma \inv \circ i_L$, i $r = \pi_L\circ \sigma$.
 \subsection{Exercici 34.5}
-Notem que si $L$ és lliure, i $g$ és exhaustiva, aleshores veurem que té secció. Si prenem una base de $L$, per tot $e_i$ en tenim prou en fixar quant val $s(e_i)$. Sigui $n_i$ un element que té per imatge $e_i$; com que $g$ és exhaustiva, aquest element existeix, i per tant, podem definir $s(e_i)=n_i$; i estendre $s$ per linealitat. Com que no hi ha cap relació entre els elements, no tindrem problemes de definció.
+Notem que si $L$ és lliure, i $g$ és exhaustiva, aleshores veurem que té secció. Si prenem una base de $L$, per tot $e_i$ en tenim prou en fixar quant val $s(e_i)$. Sigui $n_i$ un element que té per imatge $e_i$; com que $g$ és exhaustiva, aquest element existeix, i per tant, podem definir $s(e_i)=n_i$; i estendre $s$ per linealitat. Com que no hi ha cap relació entre els elements, no tindrem problemes de definició.
 \subsection{Exercici 34.6}
 Notem que si $N=A$ és DI, aleshores la única manera de tenir $A=M\oplus L$ és quan $M=0$ o $L=0$.
 \newpage
@@ -547,7 +547,7 @@ Sigui $x\in \ker(\alpha'')$, aleshores com que $g$ és exhaustiva, podem prendre
 \textbf{Té sentit:}\\
 Notem que en aquesta definició, tot era únic, excepte el pas de la tria de la $y$, ja que sabem que $g$ és exhaustiva, però no que sigui injectiva.\\
 Sigui $y_1$ i $y_2$ dues tries de $y$, tals que $g(y_1)=g(y_2)=x$. Aleshores considerem $g(\underbrace{y_1-y_2}_{Y})=0$, aleshores, existeix algun $t\in M'$ tal que $f(t)=Y$, aleshores, $\pi_{M'}\circ\alpha'(t)=0$, per tant, si agafes $\delta(x)$ no depèn de la tria de $y$.\\
-Veure que $\delta$ és $A$-lineal, es pot deduïr de que totes les aplicacions són $A$-lineals, i que tots els quadrats commuten.\\[5mm]
+Veure que $\delta$ és $A$-lineal, es pot deduir de que totes les aplicacions són $A$-lineals, i que tots els quadrats commuten.\\[5mm]
 \textbf{Pas 3: $\Ima (\ol g)=\ker(\delta)$}\\
 Sigui $x \in \ker \delta$, aleshores tenim que $\ol z=0$, i per tant, $z\in \Ima(\alpha')$, que ens diu que existeix un $t\in M'$ tal que $\alpha'(t)=z$, i com que $f'\circ\alpha'(t)=\alpha\circ f(t)=f'(z)$, aleshores com que està a la imatge per $\alpha$, tenim que existeix $y$ tal que $\alpha(y)=f'(z)$. Per tant, $\ker (\delta)\subseteq \Ima(g)$. Ara hem de veure que $\ker(\delta)\subseteq \Ima(\ol g)$: és a dir, hem de veure que existeix un $y'\in\ker(\alpha)$ tal que $g(y)=g(y')=x$: prenem $y'=y-f(t)$, aleshores per construcció de $\alpha(y-f(t))=0$, i $g(y-f(t))=0$, que ens dona el que volíem.\\
 Per veure l'altra inclusió, notem que si tenim un $x\in \Ima(g')$, aleshores prenem $y\in \ker(\alpha)$ tal que $g(y)=x$. Aleshores, si ara fem $\alpha(y)=0$, i per tant, $z=0$ (si prenem diferents representants en comptes de $y$, tindrem $z\in \Ima$). Que és el que volíem veure (l'altra inclusió es pot deduïr de que $g'\circ f'=0$).\\[5mm]
@@ -629,7 +629,7 @@ f(m')-m = 0 \iff m = f(m')
 I com que a més $\beta$ és exhaustiva, tenim que la primera fila és exacta.\\[3mm]
 Per veure que la segona fila és exacta fem el mateix.\\[4mm]
 \textbf{Morfisme de connexió}\\
-Hem de veure que el morfisme de connexió és efectivament $\pi$, sigui $x\in \ker(g)$, aleshores prenem l'element de $(x,0)\in M\oplus M'$. Ara hem de prendre un $y\in M$ tal que $\gamma(y)=(x,0)$, per tant, si prenem $y=x$: com que $g(x)=0$ satisfà l'equació. Per tant, el morfisme de conexió en $x$ és $\ol{x}$, que és el que volíem veure.\\[4mm]
+Hem de veure que el morfisme de connexió és efectivament $\pi$, sigui $x\in \ker(g)$, aleshores prenem l'element de $(x,0)\in M\oplus M'$. Ara hem de prendre un $y\in M$ tal que $\gamma(y)=(x,0)$, per tant, si prenem $y=x$: com que $g(x)=0$ satisfà l'equació. Per tant, el morfisme de connexió en $x$ és $\ol{x}$, que és el que volíem veure.\\[4mm]
 Amb el que acabem de veure, tenim que podem aplicar el lema de la serp i ens diu que
 \[
     \ker(f)\to \ker(gf)\to\ker(g)\to\coker(f)\to\coker(gf)\coker(g)
@@ -721,7 +721,108 @@ On $u_1$ i $u_2$ són bilineals; i $u_3$ i $u_4$ són lineals: per tant, els ext
         \draw[->, dashed](MoSMi)--(L) node [midway, below] {$u$};
     \end{tikzpicture}
 \end{center}
-Notem que qualsevol aplicació bilineal de $f:M\times M_i$ es pot mirar com una aplicació bilineal de $M\times\oplus M_i$ fent que si $j\neq i$ $\ol f\mid_{M\times M_j}=0$, i sinó $\ol f\mid_{M\times M_i} = f$; d'aquesta manera podem construïr un morfisme al producte tensorial original com $\omega\circ\iota_i$
+Notem que qualsevol aplicació bilineal de $f:M\times M_i$ es pot mirar com una aplicació bilineal de $M\times\oplus M_i$ fent que si $j\neq i$ $\ol f\mid_{M\times M_j}=0$, i sinó $\ol f\mid_{M\times M_i} = f$; d'aquesta manera podem construir un morfisme al producte tensorial original com $\omega\circ\iota_i$.
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 68}]
+    Siguin $S,T$ dos sistemes multiplicativament tancats. Sigui $i:A\to S\inv A$ el morfisme natural. Considerem el sistema multiplicativament tancat $U=i(T)$ de $S\inv A$. Demostreu que $ST$ és un SMT de $A$, i que $(ST)\inv A\cong U\inv(S\inv A)$ com a anells.
+\end{tcolorbox}
+\subsection{Exercici 68}
+Primer veurem que $ST$ és un SMT. Si prenem $x= st$ i $y= s't'$ dos elements del conjunt, aleshores, com que l'anell és commutatiu, tenim $xy = ss'tt'\in ST$. Per veure la segona part, notem que si veiem que la inclusió natural de $A$ en $U\inv(S\inv A)$ envia $ST$ a elements invertibles, i veiem que 
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 70}]
+    Sigui $A$ un domini d'integritat i $K$ és el cos de fraccions de $A$. Aleshores tot $A_\mfrk p$ està contingut en $K$ de forma natural. Proveu que $A=\bigcap_{\mfrk m\in \Max A}A_\mfrk m$ on la intersecció està presa dins $K$. 
+\end{tcolorbox}
+\subsection{Exercici 70}
+ESTÀ MALAMENT:\par
+Recordem que la definició de $A_\mfrk p = S\inv A$, on $S = A\setminus \mfrk p$. Per tant, com que $S\subseteq A\setminus \{0\}$, hi ha la inclusió que volem.\par
+Com que $A\hookrightarrow A_\mfrk p$, aleshores, la inclusió $A\subseteq \bigcap$ és immediata.\par
+Per veure l'altra inclusió, suposem que no: per tant, existeix algun $a/s\in \bigcap$. Per tant, $s\in A_\mfrk m$ per qualsevol ideal maximal, que ens diu, que $s\in A\setminus \mfrk m$; i per tant, tenim un element que no està en cap ideal maximal, que és una contradicció.
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 71}]
+    Sigui $A$ un anell, $I\subseteq A$ un ideal i $S=1+I$. Proveu:
+    \begin{itemize}
+        \item $S$ és un sistema multiplicativament tancat, i $0\in S$ si i només si $I=A$.
+        \item $I\cdot S\inv A\subseteq J(S\inv A)$.
+        \item Suposem ara que $A=k[X]$, amb $k$ un cos, i $I=(X)$. Siguin
+        \[
+            f:A\to S\inv A\qquad \text i \qquad g:A=k[X]\hookrightarrow k[[X]]
+        \]
+        els morfismes naturals. Proveu que existeix un únic morfisme $h:S\inv A\to k[[X]]$ tal que $g=h\circ f$ i demostreu que és injectiu.
+    \end{itemize}
+\end{tcolorbox}
+\subsection{Exercici 71.1}
+
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 72}]
+    Sigui $A$ un anell.
+    \begin{enumerate}
+        \item Sigui $\mfrk m$ un ideal maximal de $A$. Proveu que si $\frac{a}{1}=0$ en $A_{\mfrk m}$, aleshores $\Ann(a)\not\subseteq \mfrk m$.
+        \item Proveu que si $A_\mfrk m$ és reduït per tot maximal $\mfrk m$, aleshores $A$ és reduït
+    \end{enumerate}
+\end{tcolorbox}
+\subsection{Exercici 72.1}
+Notem que si $a/1 = 0$, aleshores existeix un element de $t\in A\setminus \mfrk m$ tal que $ta=0$, i per tant, $t\in \Ann(a)$, que ens diu que $\Ann(a)\not\subseteq \mfrk m$.
+\subsection{Exercici 72.1}
+% Per veure el segon apartat, hem de veure que si $A_\mfrk m$ no té elements nilpotents, aleshores, $A$ tampoc en té. Però pel que acabem de veure, si 
+Suposem que $A_\mfrk m$ és reduït per a tot maximal $\mfrk m$. Prenem $x$ un element que $x^n=0$. I mirant-nos aquest element en els anells locals: 
+\[
+x^n=0\implies \left(\frac{x} {1}\right)^n=0\implies\frac{x}{1}=0
+\]
+On la segona igualtat ve de que $A_\mfrk m$ és reduït per tot $\mfrk m$. Per tant, $\Ann(x)\not \subseteq \mfrk m$ per cap $\mfrk m$. Per tant, $x=0$.
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 73}]
+    Sigui $A$ un anell i $a_1$, $\dots$, $a_r\in A$ elements de $A$.
+    \begin{enumerate}
+        \item Sigui $A_{a_i}$ el localitzat de $A$ en el sistema multiplicativament tancat format per les potències de $a_i$. Proveu que existeix un morfisme de $A$-mòduls
+\[
+    \phi: A\to \bigoplus_{i=1}^r A_{a_i}
+\] tal que $\phi(a)=(\frac{a}{1},\dots, \frac{a}{1})$, per tot $a\in A$
+        \item Sigui $I=(a_1,\dots,a_r)\subseteq A$. Demostreu que $\ker(\phi)=\{a\in A|\exists n\geq 0: I^na=0\}$.
+        \item Sigui $\mfrk p$ un ideal primer de $A$ tal que $I\not\subseteq \mfrk p$. Demostreu que $\ker(\phi)\subseteq \mfrk p$.
+    \end{enumerate}
+\end{tcolorbox}
+\subsection{Exercici 73.1}
+Notem que el morfisme $\phi_i:A\to A_{a_i}$ (que envia $a\to \frac{a}{1}$), indueix (per la propietat universal de la suma directa), un morfisme de $A\to \oplus A_{a_i}$ que fa commutar el següent diagrama.
+\begin{center}
+    \begin{tikzpicture}
+        \node (A) at (0,1) {$A$};
+        \node (Aa1) at (-1,0) {$A_{a_1}$};
+        \node (Aa2) at (1,0) {$A_{a_2}$};
+        \node (ddd) at (2,0) {$\dots$};
+        \node (oA) at (0,-1) {$\bigoplus A_{a_i}$};
+        \draw[->] (A) -- (Aa1);
+        \draw[->] (A) -- (Aa2);
+        \draw[->] (A) -- (ddd);
+        \draw[<-] (oA) -- (Aa1);
+        \draw[<-] (oA) -- (Aa2);
+        \draw[<-] (oA) -- (ddd);
+        \draw[dashed, ->] (A) -- (oA);
+    \end{tikzpicture}
+\end{center}
+I per tant, envia $a\mapsto (a/1,\dots, a/1)$.
+\subsection{Exercici 73.2}
+Notem que si $x\in \ker(\phi)$, aleshores $x/1$ per tot $A_{a_i}$, que ens diu que existeix un $n_i$ tal que $a_i^{n_i} x = 0$. Per tant, sigui $N=\max\{n_i\}$ i considerem ara $I^{rN}x$:
+\[
+    I^{rN} x=x\sum_{\sum e_i^j=rN} a_1^{e_1^j}a_2^{e_2^j}\dots
+\]
+I com que en cada summand $\sum e_i^j=rN$, n'hi ha algun que satisfaci $e_i^j\geq N$; i per tant, la suma és zero.\par
+Per veure l'altra inclusió, notem que si $x\in \{a\in A|\exists n\geq 0: I^na=0\}$, aleshores $x\in \Ann(a_i)$ per tot $a_i$, i per tant, $x/1=0$.
+\subsection{Exercici 73.3}
+Sigui $\mfrk p$ un ideal primer que no contingui $I$ i sigui $x\in \ker(\phi)$, aleshores, hi ha un $n$ tal que $xI^n=0$. Per tant, per tot $y\in I$, $xy=0\in \mfrk p$, que ens diu que $x\in \mfrk p$ o $y\in \mfrk p$. Però si $I\not\subseteq \mfrk p$, aleshores, existeix algun $a\in I$ tal que $a\not \in \mfrk p$, que ens diu que $a^n\not \in \mfrk p$. D'aquí en podem deduir que $x\in \mfrk p$.
+
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 74}]
+    Sigui $A=\ZZ/(6)$, i el $A$-mòdul $M=\ZZ/(2)$. Demostra que $M$ és localment lliure, però no és lliure.
+\end{tcolorbox}
+\subsection{Exercici 74}
+Per veure que no és lliure:
+\[
+    [2]_6[1]_2=[2]_2=[0]_2
+\]
+Amb $[2]_6\neq 0$.\\
+Per veure, però, que $A$ és localment lliure, considerem els ideals primers de $A$, que són $(0)$, $\ZZ/(2)$ i $\ZZ/(3)$. Per tant:
+
+
 \end{document}
 % ---
 % \newpage
