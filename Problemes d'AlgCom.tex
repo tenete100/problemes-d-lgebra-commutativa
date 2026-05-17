@@ -84,6 +84,7 @@ Notem que si veiem que $c(h)c(g)\subseteq \mfrk p$ per qualsevol $\mfrk p$ que c
     \end{enumerate}
 \end{tcolorbox}
 \subsection{Exercici 5.1}
+\sloppy
 Hem de veure que $Ae$ està tancat amb la suma (i que és abeliana, però es deriva de que $A$ és anell), el producte (i que és abelià, que s'obté de que $A$ és anell); que existeixen els elements neutres; i la propietat distributiva (que es deriva immediatament de que $A$ és un anell).
 \textbf{Suma:}\\
 Sigui $ae$, $be\in Ae$, aleshores hem de veure que $ae+be\in Ae$; però $ae+be=(a+b)e\in Ae$.\par
@@ -411,6 +412,7 @@ Sigui $n\in N$, volem veure que $n$ es pot expressar de manera única de la form
     n = \underbrace{s(g(n))}_{l} + \underbrace{(n-s(g(n)))}_{m}
 \]
 Notem que és evident que $s(g(n))\in s(L)$. Per tant, hem de veure que $n-l\in f(M)$, però com que la successió és exacta, $f(M)=\ker(g)$, i com que $g(n-l)=g(n)-g(s(g(n)))$; però recordem que $g\circ s =\Id_N$, per tant, ens queda $g(n-l)=g(n)-g(n)=0$, que és el que volíem veure.\\
+\sloppy
 Per veure que aquesta manera és única, utilitzarem que té retracció, i que donada una secció, és de la forma $r(n)=f\inv(n-s(g(n)))$: considerem $0=m+l$ amb $m\in f(M)$ i $l\in s(L)$, aleshores $r(0)=0=r(m)+r(l)=r(m)=0$, per tant, $m=0$ ($m$ està a la imatge, per tant, $r(m)=r(f(a))=a=0$), i un cop tenim $m=0$, és immediat veure que $l=0$.
 
 \par
@@ -550,7 +552,7 @@ Sigui $y_1$ i $y_2$ dues tries de $y$, tals que $g(y_1)=g(y_2)=x$. Aleshores con
 Veure que $\delta$ és $A$-lineal, es pot deduir de que totes les aplicacions són $A$-lineals, i que tots els quadrats commuten.\\[5mm]
 \textbf{Pas 3: $\Ima (\ol g)=\ker(\delta)$}\\
 Sigui $x \in \ker \delta$, aleshores tenim que $\ol z=0$, i per tant, $z\in \Ima(\alpha')$, que ens diu que existeix un $t\in M'$ tal que $\alpha'(t)=z$, i com que $f'\circ\alpha'(t)=\alpha\circ f(t)=f'(z)$, aleshores com que està a la imatge per $\alpha$, tenim que existeix $y$ tal que $\alpha(y)=f'(z)$. Per tant, $\ker (\delta)\subseteq \Ima(g)$. Ara hem de veure que $\ker(\delta)\subseteq \Ima(\ol g)$: és a dir, hem de veure que existeix un $y'\in\ker(\alpha)$ tal que $g(y)=g(y')=x$: prenem $y'=y-f(t)$, aleshores per construcció de $\alpha(y-f(t))=0$, i $g(y-f(t))=0$, que ens dona el que volíem.\\
-Per veure l'altra inclusió, notem que si tenim un $x\in \Ima(g')$, aleshores prenem $y\in \ker(\alpha)$ tal que $g(y)=x$. Aleshores, si ara fem $\alpha(y)=0$, i per tant, $z=0$ (si prenem diferents representants en comptes de $y$, tindrem $z\in \Ima$). Que és el que volíem veure (l'altra inclusió es pot deduïr de que $g'\circ f'=0$).\\[5mm]
+Per veure l'altra inclusió, notem que si tenim un $x\in \Ima(g')$, aleshores prenem $y\in \ker(\alpha)$ tal que $g(y)=x$. Aleshores, si ara fem $\alpha(y)=0$, i per tant, $z=0$ (si prenem diferents representants en comptes de $y$, tindrem $z\in \Ima$). Que és el que volíem veure (l'altra inclusió es pot deduir de que $g'\circ f'=0$).\\[5mm]
 \textbf{Pas 4: $\Ima(\delta)=\ker(\ol{f'})$}\\
 Sigui $\ol z\in \ker(\ol{f'})$, aleshores notem que $\pi_M(f'(z))=0$, per tant, $\ol{f'(z)}$ està a la imatge de $\alpha$, i per tant, existeix $y\in M$ tal que $\alpha(y)=f'(z)$, aleshores, sigui $x=g(y)$, que ens diu que hem trobat una $x$ que $\delta(x)=\ol z$, i del fet que $\alpha''\circ g(y)=g'\circ \alpha(y)=g'\circ f'(z)=0$, tenim que $x\in \ker(\alpha'')$.\\
 Per veure l'altra inclusió, sigui $x\in \ker(\alpha'')$, aleshores, $\ol{f'}\circ\delta(x)=\pi_M\circ f'(z)$, però definim $z$ tal que $f'(z)=\alpha(y)$, per tant, $\pi_M(f'(z))=0$. Que és el que volíem veure.
@@ -820,9 +822,51 @@ Per veure que no és lliure:
     [2]_6[1]_2=[2]_2=[0]_2
 \]
 Amb $[2]_6\neq 0$.\\
-Per veure, però, que $A$ és localment lliure, considerem els ideals primers de $A$, que són $(0)$, $\ZZ/(2)$ i $\ZZ/(3)$. Per tant:
+Per veure, però, que $A$ és localment lliure, considerem els ideals primers de $A$, que són $(0)$, $\ZZ/(2)$ i $\ZZ/(3)$. Per tant, mirem els 3 casos:\par
+\textbf{Cas 1:} com que $A_{(0)}=0$, i $M_{(0)}=0$: és lliure.\\
+\textbf{Cas 2:} com que $A_{(2)}=\ZZ/(2)=M_{(2)}$, per tant, també és lliure.\\
+\textbf{Cas 3:} com que $A_{(3)}=\ZZ/(3)$, i $M_{(3)}=0$, també és lliure.\\
+Que és el que volíem veure.
 
-
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 79}]
+    \sloppy
+    Sigui $A[[X]]$ l'anell de sèries de potències amb coeficients en $A$. Sigui 
+    \[f=\sum_{n\geq 0}a_nX^n\in A[[X]].\] demostreu que si $A$ és Noetherià, llavors $f$ és nilpotent si $a_n$ és nilpotent per a tot $n\geq0$
+\end{tcolorbox}
+\subsection{Exercici 79}
+Considerem $I=(c_0, \dots, c_n, \dots)$ l'ideal generat pels coeficients de $f$, notem que al ser un ideal de $A$, aleshores ha de ser f.g. I per tant, existeix $a_1$, \dots, $a_n$, que generen l'ideal. I si els $a_i$ són nilpotents (i suposem que $a_i^N=0$ per tot $i$), tenim que els coeficients de $f^{nN}$ viuen a l'ideal $I^{nN}=0$.
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 80}]
+    Sigui $M$ un $A$-mòdul, $f\colon M\to M$ un $A$-endomorfisme. Proveu que si $M$ és Noetherià i $f$ és exhaustiu aleshores $f$ és isomorfisme.
+\end{tcolorbox}
+\subsection{Exercici 80}
+Del fet que $M$ és Noetherià, tenim que $\ker$ és finit generat. I com que
+\[
+    0\to \ker f\hookrightarrow M\twoheadrightarrow  M\to 0
+\]
+I per tant, $M\cong M/\ker f $
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 81}]
+    Demostreu que si $M$ és Noetherià com a $A$-mòdul, llavors $A/(0:_AM)$ és un anell Noetherià.
+\end{tcolorbox}
+\subsection{Exercici 81}
+Sigui $f:A\to M$. Aleshores, $\Ima(f)\cong A/\Ann(M)$, per tant, qualsevol cadena ascendent de $A/\Ann(M)$, també ho serà a $M$, i com que totes les cadenes ascendents de $M$ estacionen, aleshores també ho fan les de $A/\Ann(M)$.
+\newpage
+\begin{tcolorbox}[title=\section{Exercici 82}]
+    Siguin $N_1$ i $N_2$ submòduls d'un $A$-mòdul $M$. Si $M/N_1$ i $M/N_2$ són Noetherians, aleshores també ho és $M/(N_1\cap N_2)$.
+\end{tcolorbox}
+\subsection{Exercici XXX}
+Considerem les successions exactes curtes següents:
+\begin{align*}
+    0\to M\to M/N_1\to N_1\to 0\\
+    0\to M\to M/N_2\to N_2\to 0\\
+\end{align*}
+Com que els termes del mig són Noetherians, tenim que també ho són $M$, $N_1$ i $N_2$, i per tant, també ho és $N_1\cap N_2$, que ens dona:
+\[
+    0\to M\to M/(N_1\cap N_2)\to N_1\cap N_2\to 0
+\]
+Amb les 2 puntes mòduls Noetherians, que ens diu que el que hi ha al centre, també ho és.
 \end{document}
 % ---
 % \newpage
